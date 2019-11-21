@@ -66,6 +66,11 @@ public class PCPLogin extends javax.swing.JFrame {
                 b1MouseReleased(evt);
             }
         });
+        b1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                b1KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,6 +149,16 @@ public class PCPLogin extends javax.swing.JFrame {
     private void b1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_b1MouseReleased
+
+    private void b1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b1KeyPressed
+        // TODO add your handling code here:
+        if(!AliasTxt.getText().equals("")){
+            pcpc.setVisible(true);
+            //this.chiudi(ABORT);
+        }else{
+            //YOU ARE STUPID
+        }
+    }//GEN-LAST:event_b1KeyPressed
 
     /**
      * @param args the command line arguments
