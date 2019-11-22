@@ -5,7 +5,13 @@
  */
 package pcpclient;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.InetAddress;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,9 +19,10 @@ import java.net.Socket;
  */
 public class ClientStatus {
     
-    public void registration(String alias, String topic){
+    public static boolean registration(String alias, String topic){
         // creazione del pacchetto PCP
         byte[] packet = new byte[2048];
+        byte[] ack = new byte[2048];
         
         // indice pacchetto
         int index = 0;
@@ -40,9 +47,31 @@ public class ClientStatus {
         // byte separatore
         packet[index++] = 0;
         
-        //creazione della connessione TCP con il server
-        Socket client = new Socket(my_address,53101); // creazione ClientSocket su porta 13
+        try {
+            //creazione della connessione TCP con il server
+            Socket client = new Socket(InetAddress.getLoopbackAddress(),53101); // creazione ClientSocket su porta 53101
+            DataInputStream is = new DataInputStream(client.getInputStream());
+            DataOutputStream os = new DataOutputStream(client.getOutputStream());
+            os.write(packet);
+            is.read(ack);
+            byte opcode = ack[0];
+            byte assigned_id = (byte) (ack[1] + ack[2]);
+            String alias_confirmation = new String();
+            for (byte b : ack)
+                if (b != 0)
+                    alias_confirmation += b;
+            
+            if (alias.equals(alias_confirmation)){
+                return true;
+            }
+            
+            return false;
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ClientStatus.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        
+        return false;
     }
+    
 }
