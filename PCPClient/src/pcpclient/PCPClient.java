@@ -293,4 +293,8 @@ public class PCPClient extends javax.swing.JFrame {
     private java.awt.Scrollbar scrollbar1;
     // End of variables declaration//GEN-END:variables
 
+    boolean isRunning() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

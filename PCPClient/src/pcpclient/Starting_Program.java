@@ -12,11 +12,15 @@ package pcpclient;
  */
 public class Starting_Program {
      public static void main(String args[]) {
-         PCPLogin PCPlog = new PCPLogin();
-   
-         PCPlog.setVisible(true);
+         PCPLogin pcplog = new PCPLogin();
+         pcplog.setVisible(true);
+         int ctrl = 1;
+         while (pcplog.isActive()){
+            ctrl = pcplog.Control(); 
+            if (ctrl == 1)
+                pcplog.setVisible(false);
+     }
          
      }
-     
      
 }

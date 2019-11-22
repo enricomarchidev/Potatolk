@@ -5,12 +5,15 @@
  */
 package pcpclient;
 
+import javax.swing.JFrame;
+
 /**
  * @author Gaole Elia
  * @version 1.0
  */
 public class PCPLogin extends javax.swing.JFrame {
     PCPClient pcpc = new PCPClient();
+    
 
     /**
      * Creates new form PCPLogin
@@ -139,9 +142,6 @@ public class PCPLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(!AliasTxt.getText().equals("")){
             pcpc.setVisible(true);
-            //this.chiudi(ABORT);
-        }else{
-            //YOU ARE STUPID
         }
             
     }//GEN-LAST:event_b1MousePressed
@@ -152,14 +152,16 @@ public class PCPLogin extends javax.swing.JFrame {
 
     private void b1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_b1KeyPressed
         // TODO add your handling code here:
-        if(!AliasTxt.getText().equals("")){
-            pcpc.setVisible(true);
-            //this.chiudi(ABORT);
-        }else{
-            //YOU ARE STUPID
-        }
     }//GEN-LAST:event_b1KeyPressed
-
+    public int Control(){
+        if(pcpc.isVisible()){
+            return 1;
+        }else{
+            return 0;
+        }
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -169,6 +171,7 @@ public class PCPLogin extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        PCPLogin pcplog = new PCPLogin();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -190,10 +193,12 @@ public class PCPLogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PCPLogin().setVisible(true);
+                pcplog.setVisible(true);
             }
         });
+        
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AliasTxt;
