@@ -16,7 +16,7 @@ public class Starting_Program {
          pcplog.setVisible(true);
          int ctrl = 1;
          while (pcplog.isActive()){
-            ctrl = pcplog.Control(); 
+            ctrl = pcplog.Control(pcplog); 
             if (ctrl == 1)
                 pcplog.setVisible(false);
      }

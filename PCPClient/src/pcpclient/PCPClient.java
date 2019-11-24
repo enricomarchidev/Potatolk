@@ -6,7 +6,9 @@
 
 package pcpclient;
 
-import javafx.scene.input.DragEvent;
+import java.awt.Color;
+
+
 
 /**
  *
@@ -74,6 +76,7 @@ public class PCPClient extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 38, 153));
+        setSize(new java.awt.Dimension(600, 1000));
 
         jPanel4.setBackground(new java.awt.Color(0, 70, 128));
 
@@ -86,6 +89,7 @@ public class PCPClient extends javax.swing.JFrame {
 
         JTextField1.setToolTipText("");
         JTextField1.setBorder(null);
+        JTextField1.setDisabledTextColor(new java.awt.Color(163, 163, 163));
         JTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextField1ActionPerformed(evt);
@@ -123,7 +127,7 @@ public class PCPClient extends javax.swing.JFrame {
                 .addComponent(b2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(b3)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +177,7 @@ public class PCPClient extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -184,7 +188,7 @@ public class PCPClient extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollbar1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
+                .addComponent(scrollbar1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -193,7 +197,7 @@ public class PCPClient extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,45 +205,46 @@ public class PCPClient extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTextField1ActionPerformed
-
-    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel2MouseDragged
-
-    private void b1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseEntered
-        // TODO add your handling code here:
-        b1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Brown_but.png")));
-    }//GEN-LAST:event_b1MouseEntered
 
     private void b1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseExited
         // TODO add your handling code here:
         b1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Orange_but.png")));
     }//GEN-LAST:event_b1MouseExited
 
-    private void b2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b2MouseEntered
+    private void b1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseEntered
         // TODO add your handling code here:
-        b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/On_Canc_but.png")));
-    }//GEN-LAST:event_b2MouseEntered
+        b1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Brown_but.png")));
+    }//GEN-LAST:event_b1MouseEntered
 
-    private void b2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b2MouseExited
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
         // TODO add your handling code here:
-        b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Canc_but.png")));
-    }//GEN-LAST:event_b2MouseExited
+    }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void b3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b3MouseExited
+        // TODO add your handling code here:
+        b3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png")));
+    }//GEN-LAST:event_b3MouseExited
 
     private void b3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b3MouseEntered
         // TODO add your handling code here:
         b3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Dark_Send_but.png")));
     }//GEN-LAST:event_b3MouseEntered
 
-    private void b3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b3MouseExited
+    private void b2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b2MouseExited
         // TODO add your handling code here:
-        b3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png")));
-    }//GEN-LAST:event_b3MouseExited
+        b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Canc_but.png")));
+    }//GEN-LAST:event_b2MouseExited
+
+    private void b2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b2MouseEntered
+        // TODO add your handling code here:
+        b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/On_Canc_but.png")));
+    }//GEN-LAST:event_b2MouseEntered
+
+    private void JTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
