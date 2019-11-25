@@ -10,6 +10,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,6 +25,9 @@ public class ClientStatus {
         // creazione del pacchetto PCP
         byte[] packet = new byte[2048];
         byte[] ack = new byte[2048];
+        byte opcode;
+        byte[] assigned_id = new byte[2];
+        byte[] alias_confirmation_bytes = new byte[32];         //max alias lenght is 32 characters 
         
         // indice pacchetto
         int index = 0;
@@ -54,14 +59,14 @@ public class ClientStatus {
             DataOutputStream os = new DataOutputStream(client.getOutputStream());
             os.write(packet);
             is.read(ack);
-            byte opcode = ack[0];
-            byte assigned_id = (byte) (ack[1] + ack[2]);
-            String alias_confirmation = new String();
-            for (byte b : ack)
-                if (b != 0)
-                    alias_confirmation += b;
+            opcode = ack[0];
+            assigned_id[0] = ack[1];
+            assigned_id[1] = ack[2];
+            alias_confirmation_bytes = Arrays.copyOfRange(ack, 3, alias.length() + 3);
+            String alias_confirmation_string = new String(alias_confirmation_bytes);
+            //alias_confirmation_string.replaceAll("\\P{Print}","");
             
-            if (alias.equals(alias_confirmation)){
+            if (alias.equals(alias_confirmation_string)){
                 return true;
             }
             
