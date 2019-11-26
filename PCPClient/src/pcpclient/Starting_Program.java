@@ -19,8 +19,6 @@ public class Starting_Program {
             ctrl = pcplog.Control(pcplog); 
             if (ctrl == 1)
                 pcplog.setVisible(false);
-     }
-         
-     }
-     
+        }  
+    }  
 }
