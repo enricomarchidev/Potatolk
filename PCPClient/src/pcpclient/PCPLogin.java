@@ -187,11 +187,9 @@ public class PCPLogin extends javax.swing.JFrame {
                             .addComponent(b2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(b1)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -254,7 +252,7 @@ public class PCPLogin extends javax.swing.JFrame {
         if(!AliasTxt.getText().equals("")){
             pcpc.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(rootPane, "You need to insert a Username");
+            JOptionPane.showMessageDialog(rootPane, "You need to insert a USERNAME");
         }            
     }//GEN-LAST:event_b1MousePressed
 
@@ -267,7 +265,7 @@ public class PCPLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_b1KeyPressed
 
     private void b2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b2MouseEntered
-        //Event that make the x button darker
+        //Event that make the b2 button darker
         b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Dark_Cancel_but.png")));
     }//GEN-LAST:event_b2MouseEntered
 
@@ -310,6 +308,7 @@ public class PCPLogin extends javax.swing.JFrame {
         //Method that allow the dash button to iconify the PCPLogin window
         setState(javax.swing.JFrame.ICONIFIED);
     }//GEN-LAST:event_dashMousePressed
+    
     int x,y;
     private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
         //Method that allows us to take X and Y of the PCPLogin window
