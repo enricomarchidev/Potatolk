@@ -90,10 +90,14 @@ public class PCPClient extends javax.swing.JFrame {
 
         WText.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         WText.setForeground(new java.awt.Color(51, 51, 51));
-        WText.setText(" Insert text...");
         WText.setToolTipText("");
         WText.setBorder(null);
         WText.setDisabledTextColor(new java.awt.Color(163, 163, 163));
+        WText.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                WTextFocusGained(evt);
+            }
+        });
         WText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 WTextActionPerformed(evt);
@@ -254,6 +258,11 @@ public class PCPClient extends javax.swing.JFrame {
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void WTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_WTextFocusGained
+        // TODO add your handling code here:
+        if (WText.)
+    }//GEN-LAST:event_WTextFocusGained
 
     /**
      * @param args the command line arguments
