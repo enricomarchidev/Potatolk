@@ -47,7 +47,7 @@ public class PCPLogout extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        w1.setBackground(new java.awt.Color(102, 102, 102));
+        w1.setBackground(new java.awt.Color(77, 77, 77));
         w1.setForeground(new java.awt.Color(102, 102, 102));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
