@@ -33,7 +33,7 @@ public class PCPLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        TopicTxt = new javax.swing.JTextField();
         AliasTxt = new javax.swing.JTextField();
         b1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -45,10 +45,10 @@ public class PCPLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(77, 77, 77));
 
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TopicTxt.setBorder(null);
+        TopicTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TopicTxtActionPerformed(evt);
             }
         });
 
@@ -117,7 +117,7 @@ public class PCPLogin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TopicTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -139,7 +139,7 @@ public class PCPLogin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addGap(4, 4, 4)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TopicTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(b1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -151,19 +151,19 @@ public class PCPLogin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TopicTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TopicTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TopicTxtActionPerformed
 
     private void AliasTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AliasTxtActionPerformed
         // TODO add your handling code here:
@@ -181,11 +181,31 @@ public class PCPLogin extends javax.swing.JFrame {
 
     private void b1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MousePressed
         // TODO add your handling code here:
-        if(!AliasTxt.getText().equals("")){
-            pcpc.setVisible(true);
-        }else{
+        boolean registrated = false;
+        
+        if(AliasTxt.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane, "You need to insert a Username");
-        }            
+        }else if(AliasTxt.getText().length() < 6){
+            JOptionPane.showMessageDialog(rootPane, "Username minimum lenght must be 6 characters");
+        }else if(AliasTxt.getText().length() > 32){
+            JOptionPane.showMessageDialog(rootPane, "Username maximum lenght must be 32 characters");
+        }else{
+        
+        String alias = AliasTxt.getText();
+        String topic = TopicTxt.getText();
+        
+        if(!registrated){
+            if(ClientStatus.registration(alias, topic)){
+                registrated = true;
+            }
+        }
+        
+        if(registrated){
+            pcpc.setVisible(true);
+            this.setVisible(false);
+            }
+        
+        }
     }//GEN-LAST:event_b1MousePressed
 
     private void b1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseReleased
@@ -260,13 +280,13 @@ public class PCPLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AliasTxt;
+    private javax.swing.JTextField TopicTxt;
     private javax.swing.JLabel b1;
     private javax.swing.JLabel b2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
      
