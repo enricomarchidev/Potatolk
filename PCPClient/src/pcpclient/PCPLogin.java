@@ -247,13 +247,14 @@ public class PCPLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_b1MouseExited
 
     private void b1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MousePressed
-        //Methot that allows the b1 button to verify if there are some
+        //Method that allows the b1 button to verify if there are some
         //texts in the AliasTxt
         if(!AliasTxt.getText().equals("")){
             pcpc.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(rootPane, "You need to insert a USERNAME");
-        }            
+        }
+        
     }//GEN-LAST:event_b1MousePressed
 
     private void b1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseReleased
