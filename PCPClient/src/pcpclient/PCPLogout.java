@@ -75,6 +75,9 @@ public class PCPLogout extends javax.swing.JFrame {
         b1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/No_but.png"))); // NOI18N
         b1.setToolTipText("");
         b1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 b1MouseEntered(evt);
             }
@@ -248,6 +251,11 @@ public class PCPLogout extends javax.swing.JFrame {
     private void b2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b2MousePressed
         System.exit(0);
     }//GEN-LAST:event_b2MousePressed
+
+    private void b1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_b1MouseClicked
 
    
     public static void main(String args[]) {
