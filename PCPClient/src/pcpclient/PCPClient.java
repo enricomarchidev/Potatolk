@@ -409,7 +409,10 @@ public class PCPClient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PCPClient().setVisible(true);
+                PCPLogin pcplog = new PCPLogin();
+                pcplog.setVisible(true);
+                
+                //new PCPClient().setVisible(true);
             }
         });
     }
