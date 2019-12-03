@@ -181,8 +181,6 @@ public class PCPLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(TopicTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(AliasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,7 +188,7 @@ public class PCPLogin extends javax.swing.JFrame {
                             .addComponent(b2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(b1)))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TopicTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
@@ -227,8 +225,9 @@ public class PCPLogin extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
     private void TopicTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TopicTxtActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_TopicTxtActionPerformed
 
     private void AliasTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AliasTxtActionPerformed
