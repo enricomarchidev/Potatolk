@@ -6,8 +6,10 @@
 
 package pcpclient;
 
+import AppPackage.AnimationClass;
 import java.awt.Color;
 import java.awt.LayoutManager;
+import java.awt.Toolkit;
 import javax.swing.JPanel;
 
 
@@ -19,10 +21,15 @@ import javax.swing.JPanel;
  */
 public class PCPClient extends javax.swing.JFrame {
     PCPLogout PCPOut = new PCPLogout();
+    AnimationClass anim = new AnimationClass();
         
     /** Creates new form PCPClient */
     public PCPClient() {
         initComponents();
+//        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+//        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height /2 - this.getSize().height / 2);
+        
+//        anim.jLabelXLeft(UserListPane.getX(), +1000, 3, 1, UserListPane);
     }
 
     /** This method is called from within the constructor to
@@ -54,9 +61,10 @@ public class PCPClient extends javax.swing.JFrame {
         XBut = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         DashBut = new javax.swing.JLabel();
+        UserPane = new javax.swing.JLabel();
+        UserListPane = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        UserPane = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -128,14 +136,14 @@ public class PCPClient extends javax.swing.JFrame {
         MenuPanelLayout.setVerticalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuPanelLayout.createSequentialGroup()
-                .addContainerGap(443, Short.MAX_VALUE)
+                .addContainerGap(433, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogOutBut)
                 .addContainerGap())
         );
 
-        jPanel4.add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 70, 520));
+        jPanel4.add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 70, 510));
 
         jPanel2.setBackground(new java.awt.Color(47, 49, 54));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -276,15 +284,11 @@ public class PCPClient extends javax.swing.JFrame {
 
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
-        jLabel6.setBackground(new java.awt.Color(54, 57, 63));
-        jLabel6.setOpaque(true);
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, 30, 21));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/angle.png"))); // NOI18N
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 21, 10, 30));
-
         UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pan.png"))); // NOI18N
         UserPane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UserPaneMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 UserPaneMouseEntered(evt);
             }
@@ -292,7 +296,17 @@ public class PCPClient extends javax.swing.JFrame {
                 UserPaneMouseExited(evt);
             }
         });
-        jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 40, 180));
+        jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, 60));
+
+        UserListPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pane.png"))); // NOI18N
+        jPanel4.add(UserListPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 20, 140, -1));
+
+        jLabel6.setBackground(new java.awt.Color(54, 57, 63));
+        jLabel6.setOpaque(true);
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, 30, 21));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/angle.png"))); // NOI18N
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 21, 10, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -302,7 +316,7 @@ public class PCPClient extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -405,6 +419,13 @@ public class PCPClient extends javax.swing.JFrame {
         UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pan.png")));
     }//GEN-LAST:event_UserPaneMouseExited
 
+    private void UserPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseClicked
+        //if(UserPane.getX() instanceof = 60){
+            anim.jLabelXLeft(UserListPane.getX(), 190, 3, 1, UserListPane);
+            anim.jLabelXLeft(UserPane.getX(), 190, 3, 1, UserPane);
+        //}
+    }//GEN-LAST:event_UserPaneMouseClicked
+
     int x,y;
     /**
      * @param args the command line arguments
@@ -449,6 +470,7 @@ public class PCPClient extends javax.swing.JFrame {
     private javax.swing.JLabel LogOutBut;
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JLabel SendBut;
+    private javax.swing.JLabel UserListPane;
     private javax.swing.JLabel UserPane;
     private javax.swing.JTextField WText;
     private javax.swing.JLabel XBut;
