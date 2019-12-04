@@ -39,19 +39,22 @@ public class PCPClient extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jPanel4 = new javax.swing.JPanel();
+        MenuPanel = new javax.swing.JPanel();
+        MenuBut = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        LogOutBut = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         WText = new javax.swing.JTextField();
-        b2 = new javax.swing.JLabel();
-        b3 = new javax.swing.JLabel();
+        DeleteBut = new javax.swing.JLabel();
+        SendBut = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        b1 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        XBut = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        DashBut = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,16 +89,73 @@ public class PCPClient extends javax.swing.JFrame {
         setUndecorated(true);
         setSize(new java.awt.Dimension(600, 1000));
 
-        jPanel4.setBackground(new java.awt.Color(179, 179, 179));
+        jPanel4.setBackground(new java.awt.Color(54, 57, 63));
+        jPanel4.setForeground(new java.awt.Color(32, 34, 37));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(77, 77, 77));
+        MenuPanel.setBackground(new java.awt.Color(32, 34, 37));
+        MenuPanel.setForeground(new java.awt.Color(32, 34, 37));
+
+        MenuBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Orange_but.png"))); // NOI18N
+        MenuBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MenuButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MenuButMouseExited(evt);
+            }
+        });
+
+        jSeparator2.setBackground(new java.awt.Color(45, 47, 50));
+        jSeparator2.setForeground(new java.awt.Color(45, 47, 50));
+
+        LogOutBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/LogOut_but.png"))); // NOI18N
+        LogOutBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogOutButMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LogOutButMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LogOutButMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout MenuPanelLayout = new javax.swing.GroupLayout(MenuPanel);
+        MenuPanel.setLayout(MenuPanelLayout);
+        MenuPanelLayout.setHorizontalGroup(
+            MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LogOutBut)
+                    .addComponent(MenuBut)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        MenuPanelLayout.setVerticalGroup(
+            MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(MenuBut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 382, Short.MAX_VALUE)
+                .addComponent(LogOutBut)
+                .addContainerGap())
+        );
+
+        jPanel4.add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 70, 520));
+
+        jPanel2.setBackground(new java.awt.Color(47, 49, 54));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel2MouseDragged(evt);
             }
         });
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        WText.setBackground(new java.awt.Color(64, 68, 75));
         WText.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         WText.setForeground(new java.awt.Color(51, 51, 51));
         WText.setToolTipText("");
@@ -114,94 +174,72 @@ public class PCPClient extends javax.swing.JFrame {
                 WTextActionPerformed(evt);
             }
         });
-        jPanel2.add(WText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 435, 50));
 
-        b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Canc_but.png"))); // NOI18N
-        b2.addMouseListener(new java.awt.event.MouseAdapter() {
+        DeleteBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Canc_but.png"))); // NOI18N
+        DeleteBut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                b2MouseEntered(evt);
+                DeleteButMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                b2MouseExited(evt);
+                DeleteButMouseExited(evt);
             }
         });
-        jPanel2.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, -1));
 
-        b3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png"))); // NOI18N
-        b3.addMouseListener(new java.awt.event.MouseAdapter() {
+        SendBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png"))); // NOI18N
+        SendBut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                b3MouseEntered(evt);
+                SendButMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                b3MouseExited(evt);
+                SendButMouseExited(evt);
             }
         });
-        jPanel2.add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, -1, -1));
 
+        jSeparator3.setBackground(new java.awt.Color(45, 47, 50));
+        jSeparator3.setForeground(new java.awt.Color(45, 47, 50));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 10, 80));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(114, 118, 125));
         jLabel1.setText("Insert Text");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 88, -1));
 
-        jPanel5.setBackground(new java.awt.Color(77, 77, 77));
-
-        b1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Orange_but.png"))); // NOI18N
-        b1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                b1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                b1MouseExited(evt);
-            }
-        });
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/LogOut_but.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(b1)
-                            .addComponent(jLabel3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(b1)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(WText, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(DeleteBut)
+                .addGap(10, 10, 10)
+                .addComponent(SendBut))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(5, 5, 5)
+                        .addComponent(WText, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(DeleteBut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SendBut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator3))))
                 .addContainerGap())
         );
 
-        jPanel6.setBackground(new java.awt.Color(152, 152, 152));
-        jPanel6.setPreferredSize(new java.awt.Dimension(100, 47));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 459, 590, -1));
+
+        jPanel6.setBackground(new java.awt.Color(32, 34, 37));
+        jPanel6.setPreferredSize(new java.awt.Dimension(100, 24));
         jPanel6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel6MouseDragged(evt);
@@ -214,62 +252,53 @@ public class PCPClient extends javax.swing.JFrame {
         });
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/exit_but.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        XBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/exit_but.png"))); // NOI18N
+        XBut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                XButMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel2MouseEntered(evt);
+                XButMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel2MouseExited(evt);
+                XButMouseExited(evt);
             }
         });
-        jPanel6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, -1, -1));
+        jPanel6.add(XBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/hide_but.png"))); // NOI18N
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(114, 118, 125));
+        jLabel5.setText("PCPClient");
+        jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        DashBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/hide_but.png"))); // NOI18N
+        DashBut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                DashButMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
+                DashButMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel4MouseExited(evt);
+                DashButMouseExited(evt);
             }
         });
-        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
+        jPanel6.add(DashBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
+
+        jLabel6.setBackground(new java.awt.Color(54, 57, 63));
+        jLabel6.setOpaque(true);
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, 30, 21));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/angle.png"))); // NOI18N
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 21, 10, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,94 +309,6 @@ public class PCPClient extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void b1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseExited
-        // TODO add your handling code here:
-        b1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Orange_but.png")));
-    }//GEN-LAST:event_b1MouseExited
-
-    private void b1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseEntered
-        // TODO add your handling code here:
-        b1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Brown_but.png")));
-    }//GEN-LAST:event_b1MouseEntered
-
-    private void b3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b3MouseExited
-        // TODO add your handling code here:
-        b3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png")));
-    }//GEN-LAST:event_b3MouseExited
-
-    private void b3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b3MouseEntered
-        // TODO add your handling code here:
-        b3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Dark_Send_but.png")));
-    }//GEN-LAST:event_b3MouseEntered
-
-    private void b2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b2MouseExited
-        // TODO add your handling code here:
-        b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Canc_but.png")));
-    }//GEN-LAST:event_b2MouseExited
-
-    private void b2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b2MouseEntered
-        // TODO add your handling code here:
-        b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/On_Canc_but.png")));
-    }//GEN-LAST:event_b2MouseEntered
-
-    private void WTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_WTextActionPerformed
-
-    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel2MouseDragged
-
-    private void WTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_WTextFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_WTextFocusGained
-
-    private void WTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_WTextFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_WTextFocusLost
-
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
-        // TODO add your handling code here:
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Dark_logOut_but.png")));
-    }//GEN-LAST:event_jLabel3MouseEntered
-
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        // TODO add your handling code here:
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/logOut_but.png")));
-    }//GEN-LAST:event_jLabel3MouseExited
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-        setState(javax.swing.JFrame.ICONIFIED);
-        PCPOut.setVisible(true);
-    }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-       jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/dark_exit_but.png")));
-    }//GEN-LAST:event_jLabel2MouseEntered
-
-    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/exit_but.png")));
-    }//GEN-LAST:event_jLabel2MouseExited
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        setState(javax.swing.JFrame.ICONIFIED);
-        PCPOut.setVisible(true);
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/dark_hide_but.png")));
-    }//GEN-LAST:event_jLabel4MouseEntered
-
-    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/hide_but.png")));
-    }//GEN-LAST:event_jLabel4MouseExited
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        setState(javax.swing.JFrame.ICONIFIED);
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    int x,y;
     private void jPanel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MousePressed
         x = evt.getX();
         y = evt.getY();
@@ -379,6 +320,94 @@ public class PCPClient extends javax.swing.JFrame {
         this.setLocation(xx - x, yy - y);
     }//GEN-LAST:event_jPanel6MouseDragged
 
+    private void XButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButMouseExited
+        XBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/exit_but.png")));
+    }//GEN-LAST:event_XButMouseExited
+
+    private void XButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButMouseEntered
+        XBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/dark_exit_but.png")));
+    }//GEN-LAST:event_XButMouseEntered
+
+    private void XButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButMouseClicked
+        setState(javax.swing.JFrame.ICONIFIED);
+        PCPOut.setVisible(true);
+    }//GEN-LAST:event_XButMouseClicked
+
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void SendButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMouseExited
+        // TODO add your handling code here:
+        SendBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png")));
+    }//GEN-LAST:event_SendButMouseExited
+
+    private void SendButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMouseEntered
+        // TODO add your handling code here:
+        SendBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Dark_Send_but.png")));
+    }//GEN-LAST:event_SendButMouseEntered
+
+    private void DeleteButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButMouseExited
+        // TODO add your handling code here:
+        DeleteBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Canc_but.png")));
+    }//GEN-LAST:event_DeleteButMouseExited
+
+    private void DeleteButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButMouseEntered
+        // TODO add your handling code here:
+        DeleteBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/On_Canc_but.png")));
+    }//GEN-LAST:event_DeleteButMouseEntered
+
+    private void WTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WTextActionPerformed
+
+    private void WTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_WTextFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WTextFocusLost
+
+    private void WTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_WTextFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WTextFocusGained
+
+    private void LogOutButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutButMouseExited
+        // TODO add your handling code here:
+        LogOutBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/logOut_but.png")));
+    }//GEN-LAST:event_LogOutButMouseExited
+
+    private void LogOutButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutButMouseEntered
+        // TODO add your handling code here:
+        LogOutBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Dark_logOut_but.png")));
+    }//GEN-LAST:event_LogOutButMouseEntered
+
+    private void LogOutButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutButMouseClicked
+        // TODO add your handling code here:
+        setState(javax.swing.JFrame.ICONIFIED);
+        PCPOut.setVisible(true);
+    }//GEN-LAST:event_LogOutButMouseClicked
+
+    private void MenuButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuButMouseExited
+        // TODO add your handling code here:
+        MenuBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Orange_but.png")));
+    }//GEN-LAST:event_MenuButMouseExited
+
+    private void MenuButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuButMouseEntered
+        // TODO add your handling code here:
+        MenuBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Brown_but.png")));
+    }//GEN-LAST:event_MenuButMouseEntered
+
+    private void DashButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashButMouseExited
+        DashBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/hide_but.png")));
+    }//GEN-LAST:event_DashButMouseExited
+
+    private void DashButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashButMouseEntered
+        DashBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/dark_hide_but.png")));
+    }//GEN-LAST:event_DashButMouseEntered
+
+    private void DashButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashButMouseClicked
+        setState(javax.swing.JFrame.ICONIFIED);
+    }//GEN-LAST:event_DashButMouseClicked
+
+    int x,y;
     /**
      * @param args the command line arguments
      */
@@ -417,19 +446,22 @@ public class PCPClient extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel DashBut;
+    private javax.swing.JLabel DeleteBut;
+    private javax.swing.JLabel LogOutBut;
+    private javax.swing.JLabel MenuBut;
+    private javax.swing.JPanel MenuPanel;
+    private javax.swing.JLabel SendBut;
     private javax.swing.JTextField WText;
-    private javax.swing.JLabel b1;
-    private javax.swing.JLabel b2;
-    private javax.swing.JLabel b3;
+    private javax.swing.JLabel XBut;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
