@@ -351,7 +351,7 @@ public class PCPClient extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseExited
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        setState(javax.swing.JFrame.ICONIFIED);
+        //setState(javax.swing.JFrame.ICONIFIED);
         PCPOut.setVisible(true);
     }//GEN-LAST:event_jLabel2MouseClicked
 

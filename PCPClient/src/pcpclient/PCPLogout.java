@@ -35,7 +35,6 @@ public class PCPLogout extends javax.swing.JFrame {
         header = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         xb = new javax.swing.JLabel();
-        dash = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -115,29 +114,14 @@ public class PCPLogout extends javax.swing.JFrame {
             }
         });
 
-        dash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/hide_but.png"))); // NOI18N
-        dash.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                dashMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                dashMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                dashMousePressed(evt);
-            }
-        });
-
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(94, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addGap(29, 29, 29)
-                .addComponent(dash)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(63, 63, 63)
                 .addComponent(xb)
                 .addContainerGap())
         );
@@ -147,9 +131,7 @@ public class PCPLogout extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
-                    .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(dash)
-                        .addComponent(xb)))
+                    .addComponent(xb))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -221,20 +203,8 @@ public class PCPLogout extends javax.swing.JFrame {
     }//GEN-LAST:event_xbMouseExited
 
     private void xbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xbMouseClicked
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_xbMouseClicked
-
-    private void dashMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashMouseEntered
-        dash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/dark_hide_but.png")));
-    }//GEN-LAST:event_dashMouseEntered
-
-    private void dashMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashMouseExited
-        dash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/hide_but.png")));
-    }//GEN-LAST:event_dashMouseExited
-
-    private void dashMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashMousePressed
-        setState(javax.swing.JFrame.ICONIFIED);
-    }//GEN-LAST:event_dashMousePressed
     
     int x,y;
     private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
@@ -249,6 +219,7 @@ public class PCPLogout extends javax.swing.JFrame {
     }//GEN-LAST:event_headerMouseDragged
 
     private void b2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b2MousePressed
+        ClientStatus.disconnection();
         System.exit(0);
     }//GEN-LAST:event_b2MousePressed
 
@@ -293,7 +264,6 @@ public class PCPLogout extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel b1;
     private javax.swing.JLabel b2;
-    private javax.swing.JLabel dash;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
