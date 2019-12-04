@@ -7,6 +7,8 @@
 package pcpclient;
 
 import java.awt.Color;
+import java.awt.LayoutManager;
+import javax.swing.JPanel;
 
 
 
@@ -40,7 +42,6 @@ public class PCPClient extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
         jPanel4 = new javax.swing.JPanel();
         MenuPanel = new javax.swing.JPanel();
-        MenuBut = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         LogOutBut = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -55,6 +56,7 @@ public class PCPClient extends javax.swing.JFrame {
         DashBut = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        UserPane = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,16 +98,6 @@ public class PCPClient extends javax.swing.JFrame {
         MenuPanel.setBackground(new java.awt.Color(32, 34, 37));
         MenuPanel.setForeground(new java.awt.Color(32, 34, 37));
 
-        MenuBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Orange_but.png"))); // NOI18N
-        MenuBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                MenuButMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                MenuButMouseExited(evt);
-            }
-        });
-
         jSeparator2.setBackground(new java.awt.Color(45, 47, 50));
         jSeparator2.setForeground(new java.awt.Color(45, 47, 50));
 
@@ -130,18 +122,15 @@ public class PCPClient extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LogOutBut)
-                    .addComponent(MenuBut)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MenuPanelLayout.setVerticalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(MenuBut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(443, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 382, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogOutBut)
                 .addContainerGap())
         );
@@ -294,11 +283,22 @@ public class PCPClient extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/angle.png"))); // NOI18N
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 21, 10, 30));
 
+        UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pan.png"))); // NOI18N
+        UserPane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                UserPaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                UserPaneMouseExited(evt);
+            }
+        });
+        jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, 180));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,16 +385,6 @@ public class PCPClient extends javax.swing.JFrame {
         PCPOut.setVisible(true);
     }//GEN-LAST:event_LogOutButMouseClicked
 
-    private void MenuButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuButMouseExited
-        // TODO add your handling code here:
-        MenuBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Orange_but.png")));
-    }//GEN-LAST:event_MenuButMouseExited
-
-    private void MenuButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuButMouseEntered
-        // TODO add your handling code here:
-        MenuBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Brown_but.png")));
-    }//GEN-LAST:event_MenuButMouseEntered
-
     private void DashButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashButMouseExited
         DashBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/hide_but.png")));
     }//GEN-LAST:event_DashButMouseExited
@@ -406,6 +396,14 @@ public class PCPClient extends javax.swing.JFrame {
     private void DashButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashButMouseClicked
         setState(javax.swing.JFrame.ICONIFIED);
     }//GEN-LAST:event_DashButMouseClicked
+
+    private void UserPaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseEntered
+        UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/dark_user_pan.png")));
+    }//GEN-LAST:event_UserPaneMouseEntered
+
+    private void UserPaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseExited
+        UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pan.png")));
+    }//GEN-LAST:event_UserPaneMouseExited
 
     int x,y;
     /**
@@ -449,9 +447,9 @@ public class PCPClient extends javax.swing.JFrame {
     private javax.swing.JLabel DashBut;
     private javax.swing.JLabel DeleteBut;
     private javax.swing.JLabel LogOutBut;
-    private javax.swing.JLabel MenuBut;
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JLabel SendBut;
+    private javax.swing.JLabel UserPane;
     private javax.swing.JTextField WText;
     private javax.swing.JLabel XBut;
     private javax.swing.JLabel jLabel1;

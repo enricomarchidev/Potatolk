@@ -54,6 +54,7 @@ public class PCPLogin extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TopicTxt.setBackground(new java.awt.Color(64, 68, 75));
+        TopicTxt.setText(" ");
         TopicTxt.setBorder(null);
         TopicTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
