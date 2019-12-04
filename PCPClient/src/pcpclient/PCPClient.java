@@ -292,7 +292,7 @@ public class PCPClient extends javax.swing.JFrame {
                 UserPaneMouseExited(evt);
             }
         });
-        jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, 180));
+        jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 40, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -398,7 +398,7 @@ public class PCPClient extends javax.swing.JFrame {
     }//GEN-LAST:event_DashButMouseClicked
 
     private void UserPaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseEntered
-        UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/dark_user_pan.png")));
+        UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/surrounded_user_pan.png")));
     }//GEN-LAST:event_UserPaneMouseEntered
 
     private void UserPaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseExited
