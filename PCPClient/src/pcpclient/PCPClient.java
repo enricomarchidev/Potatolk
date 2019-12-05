@@ -153,7 +153,7 @@ public class PCPClient extends javax.swing.JFrame {
         });
 
         WText.setBackground(new java.awt.Color(64, 68, 75));
-        WText.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        WText.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         WText.setForeground(new java.awt.Color(153, 153, 153));
         WText.setToolTipText("");
         WText.setBorder(null);

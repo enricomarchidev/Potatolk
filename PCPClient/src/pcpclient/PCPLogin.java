@@ -5,6 +5,7 @@
  */
 package pcpclient;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -22,6 +23,8 @@ public class PCPLogin extends javax.swing.JFrame {
      */
     public PCPLogin() {
         initComponents();
+        ErrUserImg.setVisible(false);
+        ErrUser.setVisible(false);
     }
 
     /**
@@ -46,6 +49,8 @@ public class PCPLogin extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        ErrUserImg = new javax.swing.JLabel();
+        ErrUser = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -54,6 +59,8 @@ public class PCPLogin extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TopicTxt.setBackground(new java.awt.Color(64, 68, 75));
+        TopicTxt.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        TopicTxt.setForeground(new java.awt.Color(153, 153, 153));
         TopicTxt.setToolTipText("");
         TopicTxt.setBorder(null);
         TopicTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -64,11 +71,26 @@ public class PCPLogin extends javax.swing.JFrame {
         jPanel1.add(TopicTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 119, 86, 36));
 
         AliasTxt.setBackground(new java.awt.Color(64, 68, 75));
+        AliasTxt.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        AliasTxt.setForeground(new java.awt.Color(153, 153, 153));
         AliasTxt.setToolTipText("");
         AliasTxt.setBorder(null);
+        AliasTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AliasTxtMouseClicked(evt);
+            }
+        });
         AliasTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AliasTxtActionPerformed(evt);
+            }
+        });
+        AliasTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                AliasTxtKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                AliasTxtKeyTyped(evt);
             }
         });
         jPanel1.add(AliasTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 58, 287, 36));
@@ -172,6 +194,15 @@ public class PCPLogin extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/angle.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, 10, 50));
 
+        ErrUserImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ErrUserImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/alert.png"))); // NOI18N
+        jPanel1.add(ErrUserImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 20, 30));
+
+        ErrUser.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        ErrUser.setForeground(new java.awt.Color(255, 0, 0));
+        ErrUser.setText("Please enter the Username");
+        jPanel1.add(ErrUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 200, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -213,6 +244,8 @@ public class PCPLogin extends javax.swing.JFrame {
         
         if(AliasTxt.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane, "You need to insert a Username");
+            ErrUserImg.setVisible(true);
+            ErrUser.setVisible(true);
         }else if(AliasTxt.getText().length() < 6){
             JOptionPane.showMessageDialog(rootPane, "Username minimum lenght must be 6 characters");
         }else if(AliasTxt.getText().length() > 32){
@@ -303,6 +336,47 @@ public class PCPLogin extends javax.swing.JFrame {
         int yy = evt.getYOnScreen();
         this.setLocation(xx - x, yy - y);
     }//GEN-LAST:event_headerMouseDragged
+
+    private void AliasTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AliasTxtMouseClicked
+        AliasTxt.setText("");
+    }//GEN-LAST:event_AliasTxtMouseClicked
+
+    private void AliasTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AliasTxtKeyTyped
+
+    }//GEN-LAST:event_AliasTxtKeyTyped
+
+    private void AliasTxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AliasTxtKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            boolean registrated = false;
+      
+            if(AliasTxt.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane, "You need to insert a Username");
+                ErrUserImg.setVisible(true);
+                ErrUser.setVisible(true);
+            }else if(AliasTxt.getText().length() < 6){
+                JOptionPane.showMessageDialog(rootPane, "Username minimum lenght must be 6 characters");
+            }else if(AliasTxt.getText().length() > 32){
+                JOptionPane.showMessageDialog(rootPane, "Username maximum lenght must be 32 characters");
+            }else{
+        
+            String alias = AliasTxt.getText();
+            String topic = TopicTxt.getText();
+        
+            if(!registrated){
+                if(ClientStatus.registration(alias, topic)){
+                    registrated = true;
+                }
+            }
+        
+            if(registrated){
+                pcpc.setVisible(true);
+                this.setVisible(false);
+                }
+        
+            }
+            
+        }
+    }//GEN-LAST:event_AliasTxtKeyPressed
    
     public int Control(PCPLogin p){
         if(pcpc.isVisible()){
@@ -355,6 +429,8 @@ public class PCPLogin extends javax.swing.JFrame {
     private javax.swing.JTextField AliasTxt;
     private javax.swing.JLabel CancelBut;
     private javax.swing.JLabel DashBut;
+    private javax.swing.JLabel ErrUser;
+    private javax.swing.JLabel ErrUserImg;
     private javax.swing.JLabel SignInBut;
     private javax.swing.JTextField TopicTxt;
     private javax.swing.JLabel XBut;
