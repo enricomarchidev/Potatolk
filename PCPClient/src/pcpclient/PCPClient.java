@@ -21,7 +21,6 @@ import javax.swing.JPanel;
  */
 public class PCPClient extends javax.swing.JFrame {
     PCPLogout PCPOut = new PCPLogout();
-    AnimationClass anim = new AnimationClass();
         
     /** Creates new form PCPClient */
     public PCPClient() {
@@ -61,6 +60,7 @@ public class PCPClient extends javax.swing.JFrame {
         XBut = new javax.swing.JLabel();
         DashBut = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        XButUserList = new javax.swing.JLabel();
         UserListPane = new javax.swing.JLabel();
         UserPane = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -154,7 +154,7 @@ public class PCPClient extends javax.swing.JFrame {
 
         WText.setBackground(new java.awt.Color(64, 68, 75));
         WText.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        WText.setForeground(new java.awt.Color(51, 51, 51));
+        WText.setForeground(new java.awt.Color(153, 153, 153));
         WText.setToolTipText("");
         WText.setBorder(null);
         WText.setDisabledTextColor(new java.awt.Color(163, 163, 163));
@@ -279,9 +279,23 @@ public class PCPClient extends javax.swing.JFrame {
         jPanel6.add(DashBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/POTATOLKS.PNG"))); // NOI18N
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, -1));
 
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
+
+        XButUserList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/close_userlist_pane.png"))); // NOI18N
+        XButUserList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                XButUserListMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                XButUserListMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                XButUserListMouseExited(evt);
+            }
+        });
+        jPanel4.add(XButUserList, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         UserListPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pane.png"))); // NOI18N
         jPanel4.add(UserListPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, 20, 260, -1));
@@ -342,59 +356,49 @@ public class PCPClient extends javax.swing.JFrame {
     }//GEN-LAST:event_XButMouseEntered
 
     private void XButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButMouseClicked
-        setState(javax.swing.JFrame.ICONIFIED);
         PCPOut.setVisible(true);
     }//GEN-LAST:event_XButMouseClicked
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
-        // TODO add your handling code here:
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void SendButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMouseExited
-        // TODO add your handling code here:
         SendBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png")));
     }//GEN-LAST:event_SendButMouseExited
 
     private void SendButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMouseEntered
-        // TODO add your handling code here:
         SendBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Dark_Send_but.png")));
     }//GEN-LAST:event_SendButMouseEntered
 
     private void DeleteButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButMouseExited
-        // TODO add your handling code here:
         DeleteBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Canc_but.png")));
     }//GEN-LAST:event_DeleteButMouseExited
 
     private void DeleteButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButMouseEntered
-        // TODO add your handling code here:
         DeleteBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/On_Canc_but.png")));
     }//GEN-LAST:event_DeleteButMouseEntered
 
     private void WTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WTextActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_WTextActionPerformed
 
     private void WTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_WTextFocusLost
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_WTextFocusLost
 
     private void WTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_WTextFocusGained
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_WTextFocusGained
 
     private void LogOutButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutButMouseExited
-        // TODO add your handling code here:
         LogOutBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/logOut_but.png")));
     }//GEN-LAST:event_LogOutButMouseExited
 
     private void LogOutButMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutButMouseEntered
-        // TODO add your handling code here:
         LogOutBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Dark_logOut_but.png")));
     }//GEN-LAST:event_LogOutButMouseEntered
 
     private void LogOutButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutButMouseClicked
-        // TODO add your handling code here:
-        setState(javax.swing.JFrame.ICONIFIED);
         PCPOut.setVisible(true);
     }//GEN-LAST:event_LogOutButMouseClicked
 
@@ -420,10 +424,27 @@ public class PCPClient extends javax.swing.JFrame {
 
     private void UserPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseClicked
         //if(UserPane.getX() instanceof = 60){
-            anim.jLabelXLeft(UserListPane.getX(), 50, 3, 1, UserListPane);
-            anim.jLabelXLeft(UserPane.getX(), 300, 3, 1, UserPane);
+            AnimationClass anim = new AnimationClass();
+            anim.jLabelXRight(XButUserList.getX(), 280, 3, 3, XButUserList);
+            anim.jLabelXRight(UserListPane.getX(), 50, 3, 3, UserListPane);
+            anim.jLabelXRight(UserPane.getX(), 300, 3, 3, UserPane);
         //}
     }//GEN-LAST:event_UserPaneMouseClicked
+
+    private void XButUserListMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButUserListMouseEntered
+        XButUserList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/dark_close_userlist_pane.png")));
+    }//GEN-LAST:event_XButUserListMouseEntered
+
+    private void XButUserListMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButUserListMouseExited
+        XButUserList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/close_userlist_pane.png")));
+    }//GEN-LAST:event_XButUserListMouseExited
+
+    private void XButUserListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButUserListMouseClicked
+        AnimationClass anim = new AnimationClass();
+            anim.jLabelXLeft(XButUserList.getX(), 40, 3, 3, XButUserList);
+            anim.jLabelXLeft(UserListPane.getX(), -190, 3, 3, UserListPane);
+            anim.jLabelXLeft(UserPane.getX(), 60, 3, 3, UserPane);
+    }//GEN-LAST:event_XButUserListMouseClicked
 
     int x,y;
     /**
@@ -473,6 +494,7 @@ public class PCPClient extends javax.swing.JFrame {
     private javax.swing.JLabel UserPane;
     private javax.swing.JTextField WText;
     private javax.swing.JLabel XBut;
+    private javax.swing.JLabel XButUserList;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;

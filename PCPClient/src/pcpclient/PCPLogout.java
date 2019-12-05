@@ -178,7 +178,7 @@ public class PCPLogout extends javax.swing.JFrame {
     }//GEN-LAST:event_XButMouseExited
 
     private void XButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButMouseClicked
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_XButMouseClicked
     
     int x,y;
