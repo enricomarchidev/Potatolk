@@ -54,7 +54,7 @@ public class PCPLogin extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TopicTxt.setBackground(new java.awt.Color(64, 68, 75));
-        TopicTxt.setText(" ");
+        TopicTxt.setToolTipText("");
         TopicTxt.setBorder(null);
         TopicTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +64,6 @@ public class PCPLogin extends javax.swing.JFrame {
         jPanel1.add(TopicTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 119, 86, 36));
 
         AliasTxt.setBackground(new java.awt.Color(64, 68, 75));
-        AliasTxt.setText(" ");
         AliasTxt.setToolTipText("");
         AliasTxt.setBorder(null);
         AliasTxt.addActionListener(new java.awt.event.ActionListener() {

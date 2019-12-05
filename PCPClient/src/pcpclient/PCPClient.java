@@ -61,8 +61,8 @@ public class PCPClient extends javax.swing.JFrame {
         XBut = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         DashBut = new javax.swing.JLabel();
-        UserPane = new javax.swing.JLabel();
         UserListPane = new javax.swing.JLabel();
+        UserPane = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -136,14 +136,14 @@ public class PCPClient extends javax.swing.JFrame {
         MenuPanelLayout.setVerticalGroup(
             MenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuPanelLayout.createSequentialGroup()
-                .addContainerGap(433, Short.MAX_VALUE)
+                .addContainerGap(443, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogOutBut)
                 .addContainerGap())
         );
 
-        jPanel4.add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 70, 510));
+        jPanel4.add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 70, 520));
 
         jPanel2.setBackground(new java.awt.Color(47, 49, 54));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -213,8 +213,9 @@ public class PCPClient extends javax.swing.JFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DeleteBut)
-                .addGap(10, 10, 10)
-                .addComponent(SendBut))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SendBut)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,6 +285,9 @@ public class PCPClient extends javax.swing.JFrame {
 
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
+        UserListPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pane.png"))); // NOI18N
+        jPanel4.add(UserListPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, 20, 260, -1));
+
         UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pan.png"))); // NOI18N
         UserPane.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -298,9 +302,6 @@ public class PCPClient extends javax.swing.JFrame {
         });
         jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, 60));
 
-        UserListPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pane.png"))); // NOI18N
-        jPanel4.add(UserListPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 20, 140, -1));
-
         jLabel6.setBackground(new java.awt.Color(54, 57, 63));
         jLabel6.setOpaque(true);
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, 30, 21));
@@ -312,7 +313,7 @@ public class PCPClient extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 649, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -421,8 +422,8 @@ public class PCPClient extends javax.swing.JFrame {
 
     private void UserPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseClicked
         //if(UserPane.getX() instanceof = 60){
-            anim.jLabelXLeft(UserListPane.getX(), 190, 3, 1, UserListPane);
-            anim.jLabelXLeft(UserPane.getX(), 190, 3, 1, UserPane);
+            anim.jLabelXLeft(UserListPane.getX(), 50, 3, 1, UserListPane);
+            anim.jLabelXLeft(UserPane.getX(), 300, 3, 1, UserPane);
         //}
     }//GEN-LAST:event_UserPaneMouseClicked
 
