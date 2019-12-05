@@ -35,8 +35,8 @@ public class PCPLogout extends javax.swing.JFrame {
         YesBut = new javax.swing.JLabel();
         NoBut = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         XBut = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -112,12 +112,6 @@ public class PCPLogout extends javax.swing.JFrame {
         });
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(114, 118, 125));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Logout");
-        header.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, -1));
-
         XBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/exit_but.png"))); // NOI18N
         XBut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -131,6 +125,9 @@ public class PCPLogout extends javax.swing.JFrame {
             }
         });
         header.add(XBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/logout.PNG"))); // NOI18N
+        header.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         w1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 254, -1));
 
@@ -245,7 +242,7 @@ public class PCPLogout extends javax.swing.JFrame {
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;

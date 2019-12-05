@@ -41,9 +41,9 @@ public class PCPLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         CancelBut = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         DashBut = new javax.swing.JLabel();
         XBut = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -132,12 +132,6 @@ public class PCPLogin extends javax.swing.JFrame {
         });
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(114, 118, 125));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Login");
-        header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 69, -1));
-
         DashBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/hide_but.png"))); // NOI18N
         DashBut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -165,6 +159,9 @@ public class PCPLogin extends javax.swing.JFrame {
             }
         });
         header.add(XBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/Login.PNG"))); // NOI18N
+        header.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -362,11 +359,11 @@ public class PCPLogin extends javax.swing.JFrame {
     private javax.swing.JTextField TopicTxt;
     private javax.swing.JLabel XBut;
     private javax.swing.JPanel header;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
