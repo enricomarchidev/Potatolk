@@ -63,6 +63,7 @@ public class PCPClient extends javax.swing.JFrame {
         XButUserList = new javax.swing.JLabel();
         UserListPane = new javax.swing.JLabel();
         UserPane = new javax.swing.JLabel();
+        PointOfUserList = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -314,6 +315,21 @@ public class PCPClient extends javax.swing.JFrame {
         });
         jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, 60));
 
+        PointOfUserList.setPreferredSize(new java.awt.Dimension(240, 100));
+
+        javax.swing.GroupLayout PointOfUserListLayout = new javax.swing.GroupLayout(PointOfUserList);
+        PointOfUserList.setLayout(PointOfUserListLayout);
+        PointOfUserListLayout.setHorizontalGroup(
+            PointOfUserListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+        PointOfUserListLayout.setVerticalGroup(
+            PointOfUserListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        jPanel4.add(PointOfUserList, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 240, 40));
+
         jLabel6.setBackground(new java.awt.Color(54, 57, 63));
         jLabel6.setOpaque(true);
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, 30, 21));
@@ -489,6 +505,7 @@ public class PCPClient extends javax.swing.JFrame {
     private javax.swing.JLabel DeleteBut;
     private javax.swing.JLabel LogOutBut;
     private javax.swing.JPanel MenuPanel;
+    private javax.swing.JPanel PointOfUserList;
     private javax.swing.JLabel SendBut;
     private javax.swing.JLabel UserListPane;
     private javax.swing.JLabel UserPane;
