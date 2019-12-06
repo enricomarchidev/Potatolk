@@ -47,6 +47,9 @@ public class ClientStatus {
         packet[index++] = 0;
         
         //topic
+        if(topic.equals("")){
+            topic = "general";
+        }
         for (byte b: topic.getBytes())
             packet[index++] = b;
         
@@ -139,5 +142,12 @@ public class ClientStatus {
         
         // byte separatore
         packet[index++] = 0;
+        
+        DataOutputStream os = Connection.getOs();
+        try {
+            os.write(packet);
+        } catch (IOException ex) {
+            Logger.getLogger(ClientStatus.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
