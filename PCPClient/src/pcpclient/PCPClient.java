@@ -57,9 +57,9 @@ public class PCPClient extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         XBut = new javax.swing.JLabel();
         DashBut = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         UserListPane = new javax.swing.JLabel();
         UserPane = new javax.swing.JLabel();
         PointOfUserList = new javax.swing.JPanel();
@@ -250,6 +250,9 @@ public class PCPClient extends javax.swing.JFrame {
         });
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/POTATOLKS.PNG"))); // NOI18N
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 20));
+
         XBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/exit_but.png"))); // NOI18N
         XBut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -278,9 +281,6 @@ public class PCPClient extends javax.swing.JFrame {
         });
         jPanel6.add(DashBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/POTATOLKS.PNG"))); // NOI18N
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, -1));
-
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
         UserListPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pane.png"))); // NOI18N
@@ -298,7 +298,7 @@ public class PCPClient extends javax.swing.JFrame {
                 UserPaneMouseExited(evt);
             }
         });
-        jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, 60));
+        jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 390, -1, 60));
 
         PointOfUserList.setPreferredSize(new java.awt.Dimension(240, 100));
 
@@ -317,7 +317,7 @@ public class PCPClient extends javax.swing.JFrame {
 
         jLabel6.setBackground(new java.awt.Color(54, 57, 63));
         jLabel6.setOpaque(true);
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, 30, 21));
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 30, 21));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/angle.png"))); // NOI18N
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 21, 10, 30));
@@ -416,7 +416,12 @@ public class PCPClient extends javax.swing.JFrame {
     }//GEN-LAST:event_DashButMouseClicked
 
     private void UserPaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseEntered
-        UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/surrounded_user_pan.png")));
+        int y = UserPane.getY();
+        if(y == 40){
+            UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/close_user_panNew.png")));
+        }else if(y == 390){
+            UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/open_user_panNew.png")));
+        }
     }//GEN-LAST:event_UserPaneMouseEntered
 
     private void UserPaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseExited
@@ -426,16 +431,14 @@ public class PCPClient extends javax.swing.JFrame {
     private void UserPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseClicked
         //if(UserPane.getX() instanceof = 60){
             AnimationClass anim = new AnimationClass();
-            int x = UserPane.getX();
             int y = UserPane.getY();
             if(y == 390){
                 anim.jLabelXRight(UserListPane.getX(), 50, 3, 3, UserListPane);
-                anim.jLabelXRight(UserPane.getX(), 300, 3, 3, UserPane);
-                //50
+                anim.jLabelXRight(UserPane.getX(), 302, 3, 3, UserPane);
                 anim.jLabelYUp(UserPane.getY(), 40, 3, 2, UserPane);
             }else if(y == 40){
                 anim.jLabelXLeft(UserListPane.getX(), -190, 3, 3, UserListPane);
-                anim.jLabelXLeft(UserPane.getX(), 60, 3, 3, UserPane);
+                anim.jLabelXLeft(UserPane.getX(), 62, 3, 3, UserPane);
                 anim.jLabelYDown(UserPane.getY(), 390, 3, 2, UserPane);
             }
         //}
