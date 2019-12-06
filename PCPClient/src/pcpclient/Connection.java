@@ -10,6 +10,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,13 +25,15 @@ public class Connection {
     private static DataOutputStream os;
     private static byte[] id = new byte[2];     //private id
     private static String alias;
+    private static List<byte[]> packetsReceived;
 
     public static void connection() {
         try {
-            client = new Socket(InetAddress.getLoopbackAddress(),53101);
+            client = new Socket("172.16.7.141",53101);
             client.setSoTimeout(2000);
             is = new DataInputStream(client.getInputStream());
             os = new DataOutputStream(client.getOutputStream());
+            packetsReceived = new ArrayList<>();
         } catch (IOException ex) {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -62,6 +66,18 @@ public class Connection {
 
     public static void setAlias(String alias) {
         Connection.alias = alias;
+    }
+
+    public static List<byte[]> getPacketsReceived() {
+        return packetsReceived;
+    }
+    
+    public static void addPacket(byte[] packet){
+        packetsReceived.add(packet);
+    }
+    
+    public static void removePacket(byte[] packet){
+        packetsReceived.remove(packet);
     }
     
 }
