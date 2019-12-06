@@ -60,7 +60,6 @@ public class PCPClient extends javax.swing.JFrame {
         XBut = new javax.swing.JLabel();
         DashBut = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        XButUserList = new javax.swing.JLabel();
         UserListPane = new javax.swing.JLabel();
         UserPane = new javax.swing.JLabel();
         PointOfUserList = new javax.swing.JPanel();
@@ -284,20 +283,6 @@ public class PCPClient extends javax.swing.JFrame {
 
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
-        XButUserList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/close_userlist_pane.png"))); // NOI18N
-        XButUserList.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                XButUserListMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                XButUserListMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                XButUserListMouseExited(evt);
-            }
-        });
-        jPanel4.add(XButUserList, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
-
         UserListPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pane.png"))); // NOI18N
         jPanel4.add(UserListPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, 20, 260, -1));
 
@@ -441,26 +426,20 @@ public class PCPClient extends javax.swing.JFrame {
     private void UserPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseClicked
         //if(UserPane.getX() instanceof = 60){
             AnimationClass anim = new AnimationClass();
-            anim.jLabelXRight(XButUserList.getX(), 280, 3, 3, XButUserList);
-            anim.jLabelXRight(UserListPane.getX(), 50, 3, 3, UserListPane);
-            anim.jLabelXRight(UserPane.getX(), 300, 3, 3, UserPane);
+            int x = UserPane.getX();
+            int y = UserPane.getY();
+            if(y == 390){
+                anim.jLabelXRight(UserListPane.getX(), 50, 3, 3, UserListPane);
+                anim.jLabelXRight(UserPane.getX(), 300, 3, 3, UserPane);
+                //50
+                anim.jLabelYUp(UserPane.getY(), 40, 3, 2, UserPane);
+            }else if(y == 40){
+                anim.jLabelXLeft(UserListPane.getX(), -190, 3, 3, UserListPane);
+                anim.jLabelXLeft(UserPane.getX(), 60, 3, 3, UserPane);
+                anim.jLabelYDown(UserPane.getY(), 390, 3, 2, UserPane);
+            }
         //}
     }//GEN-LAST:event_UserPaneMouseClicked
-
-    private void XButUserListMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButUserListMouseEntered
-        XButUserList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/dark_close_userlist_pane.png")));
-    }//GEN-LAST:event_XButUserListMouseEntered
-
-    private void XButUserListMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButUserListMouseExited
-        XButUserList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/close_userlist_pane.png")));
-    }//GEN-LAST:event_XButUserListMouseExited
-
-    private void XButUserListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XButUserListMouseClicked
-        AnimationClass anim = new AnimationClass();
-            anim.jLabelXLeft(XButUserList.getX(), 40, 3, 3, XButUserList);
-            anim.jLabelXLeft(UserListPane.getX(), -190, 3, 3, UserListPane);
-            anim.jLabelXLeft(UserPane.getX(), 60, 3, 3, UserPane);
-    }//GEN-LAST:event_XButUserListMouseClicked
 
     int x,y;
     /**
@@ -511,7 +490,6 @@ public class PCPClient extends javax.swing.JFrame {
     private javax.swing.JLabel UserPane;
     private javax.swing.JTextField WText;
     private javax.swing.JLabel XBut;
-    private javax.swing.JLabel XButUserList;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
