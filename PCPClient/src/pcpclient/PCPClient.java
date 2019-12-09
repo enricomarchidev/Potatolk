@@ -10,7 +10,12 @@ import AppPackage.AnimationClass;
 import java.awt.Color;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
 
@@ -19,12 +24,16 @@ import javax.swing.JPanel;
  * @author Gaole Elia
  * @version 1.0
  */
-public class PCPClient extends javax.swing.JFrame {
+public class PCPClient extends javax.swing.JFrame implements Cloneable{
     PCPLogout PCPOut = new PCPLogout();
+    ArrayList<JLabel> lslab = new ArrayList<JLabel>();
+    ArrayList<String> lstring = new ArrayList<String>();
+    //ArrayList<JTextField> lsjt = new ArrayList<JTextField>();
         
     /** Creates new form PCPClient */
     public PCPClient() {
         initComponents();
+        cose.setVisible(false);
 //        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 //        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height /2 - this.getSize().height / 2);
         
@@ -60,9 +69,19 @@ public class PCPClient extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         XBut = new javax.swing.JLabel();
         DashBut = new javax.swing.JLabel();
+        cose = new javax.swing.JLabel();
+        cose1 = new javax.swing.JLabel();
+        cose2 = new javax.swing.JLabel();
+        cose3 = new javax.swing.JLabel();
+        cose4 = new javax.swing.JLabel();
+        cose5 = new javax.swing.JLabel();
+        cose6 = new javax.swing.JLabel();
+        cose7 = new javax.swing.JLabel();
+        cose8 = new javax.swing.JLabel();
+        cose9 = new javax.swing.JLabel();
+        cose10 = new javax.swing.JLabel();
         UserListPane = new javax.swing.JLabel();
         UserPane = new javax.swing.JLabel();
-        PointOfUserList = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -283,7 +302,41 @@ public class PCPClient extends javax.swing.JFrame {
 
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
+        cose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 420, -1, -1));
+
+        cose1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 20, -1, -1));
+
+        cose2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 60, -1, -1));
+
+        cose3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 180, -1, -1));
+
+        cose4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 220, -1, -1));
+
+        cose5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 100, -1, -1));
+
+        cose6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 300, -1, -1));
+
+        cose7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 340, -1, -1));
+
+        cose8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 140, -1, -1));
+
+        cose9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 260, -1, -1));
+
+        cose10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
+        jPanel4.add(cose10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 380, -1, -1));
+
         UserListPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pane.png"))); // NOI18N
+        UserListPane.setAutoscrolls(true);
         jPanel4.add(UserListPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, 20, 260, -1));
 
         UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pan.png"))); // NOI18N
@@ -300,24 +353,9 @@ public class PCPClient extends javax.swing.JFrame {
         });
         jPanel4.add(UserPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 390, -1, 60));
 
-        PointOfUserList.setPreferredSize(new java.awt.Dimension(240, 100));
-
-        javax.swing.GroupLayout PointOfUserListLayout = new javax.swing.GroupLayout(PointOfUserList);
-        PointOfUserList.setLayout(PointOfUserListLayout);
-        PointOfUserListLayout.setHorizontalGroup(
-            PointOfUserListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
-        );
-        PointOfUserListLayout.setVerticalGroup(
-            PointOfUserListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        jPanel4.add(PointOfUserList, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 240, 40));
-
         jLabel6.setBackground(new java.awt.Color(54, 57, 63));
         jLabel6.setOpaque(true);
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 30, 21));
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 30, 30));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/angle.png"))); // NOI18N
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 21, 10, 30));
@@ -428,14 +466,24 @@ public class PCPClient extends javax.swing.JFrame {
         UserPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pan.png")));
     }//GEN-LAST:event_UserPaneMouseExited
 
+    
     private void UserPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserPaneMouseClicked
         //if(UserPane.getX() instanceof = 60){
             AnimationClass anim = new AnimationClass();
             int y = UserPane.getY();
+            int num = 4;
+            
+//            int YPos = 0;
             if(y == 390){
                 anim.jLabelXRight(UserListPane.getX(), 50, 3, 3, UserListPane);
                 anim.jLabelXRight(UserPane.getX(), 302, 3, 3, UserPane);
                 anim.jLabelYUp(UserPane.getY(), 40, 3, 2, UserPane);
+                
+                lstring.add("Ciccio");
+                lstring.add("Pippo");
+                
+               
+                
             }else if(y == 40){
                 anim.jLabelXLeft(UserListPane.getX(), -190, 3, 3, UserListPane);
                 anim.jLabelXLeft(UserPane.getX(), 62, 3, 3, UserPane);
@@ -444,7 +492,10 @@ public class PCPClient extends javax.swing.JFrame {
         //}
     }//GEN-LAST:event_UserPaneMouseClicked
 
-    int x,y;
+
+
+    int x,y, Ypos;
+    int YPos = -16; //+40
     /**
      * @param args the command line arguments
      */
@@ -487,12 +538,22 @@ public class PCPClient extends javax.swing.JFrame {
     private javax.swing.JLabel DeleteBut;
     private javax.swing.JLabel LogOutBut;
     private javax.swing.JPanel MenuPanel;
-    private javax.swing.JPanel PointOfUserList;
     private javax.swing.JLabel SendBut;
     private javax.swing.JLabel UserListPane;
     private javax.swing.JLabel UserPane;
     private javax.swing.JTextField WText;
     private javax.swing.JLabel XBut;
+    private javax.swing.JLabel cose;
+    private javax.swing.JLabel cose1;
+    private javax.swing.JLabel cose10;
+    private javax.swing.JLabel cose2;
+    private javax.swing.JLabel cose3;
+    private javax.swing.JLabel cose4;
+    private javax.swing.JLabel cose5;
+    private javax.swing.JLabel cose6;
+    private javax.swing.JLabel cose7;
+    private javax.swing.JLabel cose8;
+    private javax.swing.JLabel cose9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;

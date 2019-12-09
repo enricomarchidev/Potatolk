@@ -55,7 +55,7 @@ public class ClientStatus {
         
         try {
             //creazione della connessione TCP con il server
-            Socket client = new Socket("172.16.7.141",53101); // creazione ClientSocket su porta 53101
+            Socket client = new Socket("127.0.0.1",53101); // creazione ClientSocket su porta 53101 "172.16.7.141"
             client.setSoTimeout(2000);
             DataInputStream is = new DataInputStream(client.getInputStream());
             DataOutputStream os = new DataOutputStream(client.getOutputStream());
