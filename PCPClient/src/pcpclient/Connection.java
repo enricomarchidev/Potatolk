@@ -29,8 +29,8 @@ public class Connection {
 
     public static void connection() {
         try {
-            client = new Socket("172.16.7.141",53101);
-            client.setSoTimeout(2000);
+            client = new Socket("127.0.0.1",53101);
+            //client.setSoTimeout(2000);
             is = new DataInputStream(client.getInputStream());
             os = new DataOutputStream(client.getOutputStream());
             packetsReceived = new ArrayList<>();

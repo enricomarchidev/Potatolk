@@ -74,9 +74,15 @@ public class ClientStatus {
                 alias_confirmation_bytes = Arrays.copyOfRange(ack, 3, alias.length() + 3);
                 String alias_confirmation_string = new String(alias_confirmation_bytes);
                 //alias_confirmation_string.replaceAll("\\P{Print}","");
-
+                
                 if (alias.equals(alias_confirmation_string)){
-                    return true;
+                    GroupUsers.users();                     //creating users object
+                    packetReceiver receiverThread = new packetReceiver();
+                    packetInterpreter interpreterThread = new packetInterpreter();
+                    receiverThread.start();
+                    interpreterThread.start();
+                    System.out.println("Successfully registrated with alias " + alias);
+                    return true;    //registration successful
                 }
             }
             

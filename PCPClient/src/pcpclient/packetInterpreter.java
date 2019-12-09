@@ -5,19 +5,36 @@
  */
 package pcpclient;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Enrico Marchi
  */
-public class packetInterpreter implements Runnable{
+public class packetInterpreter extends Thread{
 
     @Override
     public void run() {
         while(true){
             while(Connection.getPacketsReceived().isEmpty()){
-                //interpret packets
+                try {
+                    sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(packetInterpreter.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
+            byte[] packetReceived = Connection.getPacketsReceived().get(0);
+            switch (packetReceived[0]) {        //opcode byte
+                //opcodes
+                case 51:
+                    //opcode 51
+                    ControlMessages.groupUsersListParse(packetReceived);
+                    break;
+            }
+            Connection.removePacket(packetReceived);        //packet processed
         }
-    }
-    
+    }   
 }

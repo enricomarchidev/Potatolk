@@ -8,9 +8,15 @@ package pcpclient;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 /**
  *
@@ -44,5 +50,70 @@ public class ControlMessages {
         } catch (IOException ex) {
             Logger.getLogger(ClientStatus.class.getName()).log(Level.SEVERE, null, ex);
         }     
+    }
+    
+    public static void groupUsersListParse(byte[] pkt){
+        byte type = pkt[1];     //type of group list
+        byte listLenght = pkt[2];
+        byte[] listByte = new byte[2045];
+        String listJSON = new String();
+        List<String> listJava = new ArrayList<>();
+        //json parser library
+        Gson gson = new Gson(); 
+        Type aliasListType = new TypeToken<ArrayList<String>>(){}.getType();
+        switch (type) {        
+                //opcodes
+                case 0:         //complete users list
+                    listByte = Arrays.copyOfRange(pkt, 3, listByte.length + 3);
+                    for(byte b : listByte){
+                        if(b != 0){
+                            listJSON += (char)b;
+                        }else{
+                            break;
+                        }
+                    }
+                    
+                    //json array to java list
+                    listJava = gson.fromJson(listJSON, aliasListType);                  
+                    
+                    GroupUsers.setAliasList(listJava);
+                    GroupUsers.setAliasListUpdated(true);
+                    System.out.println("Complete users list received: " + listJSON);
+                    break;
+                case 1:
+                    listByte = Arrays.copyOfRange(pkt, 3, listByte.length + 3);
+                    for(byte b : listByte){
+                        if(b != 0){
+                            listJSON += (char)b;
+                        }else{
+                            break;
+                        }
+                    }
+                    
+                    //json array to java list
+                    listJava = gson.fromJson(listJSON, aliasListType);  
+                    
+                    GroupUsers.addAlias(listJava.get(0));
+                    GroupUsers.setAliasListUpdated(true);
+                    System.out.println("Joined user list received: " + listJSON);
+                    break;
+                case 2:
+                    listByte = Arrays.copyOfRange(pkt, 3, listByte.length + 3);
+                    for(byte b : listByte){
+                        if(b != 0){
+                            listJSON += (char)b;
+                        }else{
+                            break;
+                        }
+                    }
+                    
+                    //json array to java list
+                    listJava = gson.fromJson(listJSON, aliasListType);
+                    
+                    GroupUsers.removeAlias(listJava.get(0));
+                    GroupUsers.setAliasListUpdated(true);
+                    System.out.println("Disconnected user list received: " + listJSON);
+                    break;
+        }
     }
 }
