@@ -18,6 +18,7 @@ public class packetInterpreter extends Thread{
 
     @Override
     public void run() {
+        this.setName("packetInterpreter");
         while(true){
             while(Connection.getPacketsReceived().isEmpty()){
                 try {

@@ -22,8 +22,9 @@ public class packetReceiver extends Thread{
     
     @Override
     public void run() {
+        this.setName("packetReceiver");
         //while not disconnected
-        while(true){
+        while(!Thread.interrupted()){
             try {
                 is.read(pkt);
                 Connection.addPacket(pkt);

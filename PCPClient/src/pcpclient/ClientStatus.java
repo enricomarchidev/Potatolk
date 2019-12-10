@@ -12,6 +12,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -101,6 +102,14 @@ public class ClientStatus {
         byte[] packet = new byte[3];                         //PCP packet to send
         byte[] privateId = Connection.getId();
         
+        Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
+        //System.out.println(t.getName());
+        for(Thread t : threadSet){
+            if(t.getName().equals("packetReceiver")){
+                t.interrupt();
+            }
+        }
+        
         // packet index
         int index = 0;
         
@@ -117,6 +126,8 @@ public class ClientStatus {
         try {
             os.write(packet);
             //threads stop
+            is.close();
+            os.close();
             clientSocket.close();
             
         } catch (IOException ex) {
