@@ -415,7 +415,9 @@ public class PCPClient extends javax.swing.JFrame{
 
     private void LogOutButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutButMouseClicked
        
-        PCPOut.setVisible(true);
+    //private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        //setState(javax.swing.JFrame.ICONIFIED);
+        //PCPOut.setVisible(true);
         
     }//GEN-LAST:event_LogOutButMouseClicked
 

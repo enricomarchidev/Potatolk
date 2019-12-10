@@ -237,7 +237,7 @@ public class PCPLogout extends javax.swing.JFrame {
 
     private void YesButMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_YesButMousePressed
         //This event close all
-        
+        ClientStatus.disconnection();
         System.exit(0);
         
     }//GEN-LAST:event_YesButMousePressed
