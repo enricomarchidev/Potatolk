@@ -225,7 +225,7 @@ public class PCPLogout extends javax.swing.JFrame {
 
     private void b1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseClicked
         // TODO add your handling code here:
-        ClientStatus.disconnection();
+        //ClientStatus.disconnection();
         this.setVisible(false);
     }//GEN-LAST:event_b1MouseClicked
 

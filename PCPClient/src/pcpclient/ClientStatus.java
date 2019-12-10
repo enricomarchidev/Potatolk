@@ -98,7 +98,7 @@ public class ClientStatus {
     }
     
     public static void disconnection(){
-        byte[] packet = new byte[2048];                         //PCP packet to send
+        byte[] packet = new byte[3];                         //PCP packet to send
         byte[] privateId = Connection.getId();
         
         // packet index
@@ -111,9 +111,14 @@ public class ClientStatus {
         packet[index++] = privateId[0];
         packet[index++] = privateId[1];
         
+        Socket clientSocket = Connection.getSocket();
         DataOutputStream os = Connection.getOs();
+        DataInputStream is = Connection.getIs();
         try {
             os.write(packet);
+            //threads stop
+            clientSocket.close();
+            
         } catch (IOException ex) {
             Logger.getLogger(ClientStatus.class.getName()).log(Level.SEVERE, null, ex);
         }
