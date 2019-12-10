@@ -311,7 +311,7 @@ public class PCPClient extends javax.swing.JFrame implements Cloneable{
         UserList.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         UserList.setForeground(new java.awt.Color(230, 230, 230));
         UserList.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        UserList.setPreferredSize(new java.awt.Dimension(230, 40));
+        UserList.setPreferredSize(new java.awt.Dimension(240, 40));
         UserList.setSelectionBackground(new java.awt.Color(192, 192, 192));
         jScrollPane3.setViewportView(UserList);
 
@@ -319,13 +319,13 @@ public class PCPClient extends javax.swing.JFrame implements Cloneable{
         jPanelList.setLayout(jPanelListLayout);
         jPanelListLayout.setHorizontalGroup(
             jPanelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+            .addGroup(jPanelListLayout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelListLayout.setVerticalGroup(
             jPanelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelListLayout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 390, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
         );
 
         jPanel4.add(jPanelList, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 239, 520));
