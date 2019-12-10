@@ -11,9 +11,12 @@ import java.awt.Color;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -26,14 +29,14 @@ import javax.swing.JTextField;
  */
 public class PCPClient extends javax.swing.JFrame implements Cloneable{
     PCPLogout PCPOut = new PCPLogout();
-    ArrayList<JLabel> lslab = new ArrayList<JLabel>();
-    ArrayList<String> lstring = new ArrayList<String>();
-    //ArrayList<JTextField> lsjt = new ArrayList<JTextField>();
-        
+    ArrayList<String> ls = new ArrayList<String>();
+    
+    DefaultListModel model; 
     /** Creates new form PCPClient */
     public PCPClient() {
         initComponents();
-        cose.setVisible(false);
+        model = new DefaultListModel<String>();
+        jPanelList.setVisible(false);
 //        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 //        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height /2 - this.getSize().height / 2);
         
@@ -69,17 +72,9 @@ public class PCPClient extends javax.swing.JFrame implements Cloneable{
         jLabel3 = new javax.swing.JLabel();
         XBut = new javax.swing.JLabel();
         DashBut = new javax.swing.JLabel();
-        cose = new javax.swing.JLabel();
-        cose1 = new javax.swing.JLabel();
-        cose2 = new javax.swing.JLabel();
-        cose3 = new javax.swing.JLabel();
-        cose4 = new javax.swing.JLabel();
-        cose5 = new javax.swing.JLabel();
-        cose6 = new javax.swing.JLabel();
-        cose7 = new javax.swing.JLabel();
-        cose8 = new javax.swing.JLabel();
-        cose9 = new javax.swing.JLabel();
-        cose10 = new javax.swing.JLabel();
+        jPanelList = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        UserList = new javax.swing.JList<>();
         UserListPane = new javax.swing.JLabel();
         UserPane = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -119,7 +114,7 @@ public class PCPClient extends javax.swing.JFrame implements Cloneable{
         setSize(new java.awt.Dimension(600, 1000));
 
         jPanel4.setBackground(new java.awt.Color(54, 57, 63));
-        jPanel4.setForeground(new java.awt.Color(32, 34, 37));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MenuPanel.setBackground(new java.awt.Color(32, 34, 37));
@@ -193,6 +188,9 @@ public class PCPClient extends javax.swing.JFrame implements Cloneable{
 
         DeleteBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Canc_but.png"))); // NOI18N
         DeleteBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteButMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 DeleteButMouseEntered(evt);
             }
@@ -302,38 +300,35 @@ public class PCPClient extends javax.swing.JFrame implements Cloneable{
 
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
-        cose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 420, -1, -1));
+        jPanelList.setBackground(new java.awt.Color(22, 24, 27));
 
-        cose1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 20, -1, -1));
+        jScrollPane3.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setCursor(new java.awt.Cursor(java.awt.Cursor.SE_RESIZE_CURSOR));
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(240, 130));
 
-        cose2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 60, -1, -1));
+        UserList.setBackground(new java.awt.Color(92, 92, 92));
+        UserList.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        UserList.setForeground(new java.awt.Color(230, 230, 230));
+        UserList.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        UserList.setPreferredSize(new java.awt.Dimension(230, 40));
+        UserList.setSelectionBackground(new java.awt.Color(192, 192, 192));
+        jScrollPane3.setViewportView(UserList);
 
-        cose3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 180, -1, -1));
+        javax.swing.GroupLayout jPanelListLayout = new javax.swing.GroupLayout(jPanelList);
+        jPanelList.setLayout(jPanelListLayout);
+        jPanelListLayout.setHorizontalGroup(
+            jPanelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+        );
+        jPanelListLayout.setVerticalGroup(
+            jPanelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelListLayout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 390, Short.MAX_VALUE))
+        );
 
-        cose4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 220, -1, -1));
-
-        cose5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 100, -1, -1));
-
-        cose6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 300, -1, -1));
-
-        cose7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 340, -1, -1));
-
-        cose8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 140, -1, -1));
-
-        cose9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 260, -1, -1));
-
-        cose10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/chat_but.png"))); // NOI18N
-        jPanel4.add(cose10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 380, -1, -1));
+        jPanel4.add(jPanelList, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 239, 520));
 
         UserListPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pane.png"))); // NOI18N
         UserListPane.setAutoscrolls(true);
@@ -471,31 +466,59 @@ public class PCPClient extends javax.swing.JFrame implements Cloneable{
         //if(UserPane.getX() instanceof = 60){
             AnimationClass anim = new AnimationClass();
             int y = UserPane.getY();
-            int num = 4;
+            int set;
             
-//            int YPos = 0;
             if(y == 390){
                 anim.jLabelXRight(UserListPane.getX(), 50, 3, 3, UserListPane);
                 anim.jLabelXRight(UserPane.getX(), 302, 3, 3, UserPane);
                 anim.jLabelYUp(UserPane.getY(), 40, 3, 2, UserPane);
                 
-                lstring.add("Ciccio");
-                lstring.add("Pippo");
+                set = 0;
+                ls.add("Ciccio");
+                ListModification(ls, set);
                 
                
+                
                 
             }else if(y == 40){
                 anim.jLabelXLeft(UserListPane.getX(), -190, 3, 3, UserListPane);
                 anim.jLabelXLeft(UserPane.getX(), 62, 3, 3, UserPane);
                 anim.jLabelYDown(UserPane.getY(), 390, 3, 2, UserPane);
+                
+                set = 1;
+                ListModification(ls, set);
             }
         //}
     }//GEN-LAST:event_UserPaneMouseClicked
 
+    private void DeleteButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButMouseClicked
+
+    }//GEN-LAST:event_DeleteButMouseClicked
+
+   public void ListModification(ArrayList<String> ls, int setter){
+        if(setter == 0){ 
+            for(int i = 0; i < ls.size(); i++){
+                String str = ls.get(i);
+                if(!model.contains(ls.get(i))){
+                    model.addElement(str);
+                }
+                
+                if(!ls.contains(ls.get(i))){
+                    model.removeElement(str);
+                }
+                
+            UserList.setModel(model);
+            jPanelList.setVisible(true);
+            }
+        }else if(setter == 1){
+            
+            jPanelList.setVisible(false);
+        }
+                       
+   }
 
 
-    int x,y, Ypos;
-    int YPos = -16; //+40
+    int x,y;
     /**
      * @param args the command line arguments
      */
@@ -539,21 +562,11 @@ public class PCPClient extends javax.swing.JFrame implements Cloneable{
     private javax.swing.JLabel LogOutBut;
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JLabel SendBut;
+    private javax.swing.JList<String> UserList;
     private javax.swing.JLabel UserListPane;
     private javax.swing.JLabel UserPane;
     private javax.swing.JTextField WText;
     private javax.swing.JLabel XBut;
-    private javax.swing.JLabel cose;
-    private javax.swing.JLabel cose1;
-    private javax.swing.JLabel cose10;
-    private javax.swing.JLabel cose2;
-    private javax.swing.JLabel cose3;
-    private javax.swing.JLabel cose4;
-    private javax.swing.JLabel cose5;
-    private javax.swing.JLabel cose6;
-    private javax.swing.JLabel cose7;
-    private javax.swing.JLabel cose8;
-    private javax.swing.JLabel cose9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
@@ -563,8 +576,10 @@ public class PCPClient extends javax.swing.JFrame implements Cloneable{
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanelList;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextArea jTextArea1;

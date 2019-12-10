@@ -346,7 +346,7 @@ public class PCPLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_AliasTxtKeyTyped
 
     private void AliasTxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AliasTxtKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             boolean registrated = false;
       
             if(AliasTxt.getText().equals("")){
