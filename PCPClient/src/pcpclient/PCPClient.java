@@ -7,8 +7,13 @@
 package pcpclient;
 
 import AppPackage.AnimationClass;
+import static java.lang.Thread.sleep;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 
 
@@ -68,6 +73,8 @@ public class PCPClient extends javax.swing.JFrame{
         UserPane = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextAreaChat = new javax.swing.JTextArea();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -169,14 +176,14 @@ public class PCPClient extends javax.swing.JFrame{
 
         SendBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png"))); // NOI18N
         SendBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SendButMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 SendButMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 SendButMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                SendButMousePressed(evt);
             }
         });
 
@@ -325,6 +332,14 @@ public class PCPClient extends javax.swing.JFrame{
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/angle.png"))); // NOI18N
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 21, 10, 30));
+
+        jTextAreaChat.setEditable(false);
+        jTextAreaChat.setBackground(new java.awt.Color(54, 57, 63));
+        jTextAreaChat.setColumns(20);
+        jTextAreaChat.setRows(5);
+        jScrollPane4.setViewportView(jTextAreaChat);
+
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 580, 440));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -499,10 +514,10 @@ public class PCPClient extends javax.swing.JFrame{
             
     }//GEN-LAST:event_UserPaneMouseClicked
 
-    private void SendButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMouseClicked
+    private void SendButMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMousePressed
         String message = WText.getText();
         Messages.userToChatSend(message);
-    }//GEN-LAST:event_SendButMouseClicked
+    }//GEN-LAST:event_SendButMousePressed
 
    public void ListModification(ArrayList<String> ls, int setter){
         
@@ -539,6 +554,10 @@ public class PCPClient extends javax.swing.JFrame{
 
     int x,y;
     
+    public void showMessage(Message message){
+        jTextAreaChat.setText(message.toString());
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -568,14 +587,32 @@ public class PCPClient extends javax.swing.JFrame{
         //</editor-fold>
 
         /* Create and display the form */
+        PCPClient pcp = new PCPClient();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                PCPLogin pcplog = new PCPLogin();
+                PCPLogin pcplog = new PCPLogin(pcp);
                 pcplog.setVisible(true);
-                
                 //new PCPClient().setVisible(true);
             }
+            
         });
+            
+            Group.createGroup();        //creating group
+            while(true){
+                while(Group.getGroupMessages().isEmpty()){
+                    try {
+                        sleep(100);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(PCPClient.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                List<Message> currentMessages = Group.getGroupMessages();
+                for(Message m : currentMessages){
+                    //show message to gui
+                    pcp.showMessage(m);
+                    Group.removeMessage(m);
+                }
+            }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DashBut;
@@ -601,9 +638,11 @@ public class PCPClient extends javax.swing.JFrame{
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaChat;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 

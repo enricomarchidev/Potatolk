@@ -21,7 +21,7 @@ public class Messages {
         
         // creation of th PCP packet
         
-        byte[] packet = new byte[2048];                         //PCP packet to send
+        byte[] packet = new byte[2000];                         //PCP packet to send
         byte[] id = Connection.getId();                         //User id
         
          // packet index

@@ -68,4 +68,5 @@ public class Group {
     public static void removeMessage(Message message){
         Group.groupMessages.remove(message);
     }
+
 }
