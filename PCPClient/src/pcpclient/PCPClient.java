@@ -37,7 +37,6 @@ public class PCPClient extends javax.swing.JFrame{
         PCPOut = new PCPLogout();
         ls = new ArrayList<String>();
         model = new DefaultListModel<String>();
-        
         jPanelList.setVisible(false);
         
     }
@@ -171,6 +170,9 @@ public class PCPClient extends javax.swing.JFrame{
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 DeleteButMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                DeleteButMousePressed(evt);
             }
         });
 
@@ -337,9 +339,10 @@ public class PCPClient extends javax.swing.JFrame{
         jTextAreaChat.setBackground(new java.awt.Color(54, 57, 63));
         jTextAreaChat.setColumns(20);
         jTextAreaChat.setRows(5);
+        jTextAreaChat.setBorder(null);
         jScrollPane4.setViewportView(jTextAreaChat);
 
-        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 580, 440));
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 560, 440));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -516,8 +519,13 @@ public class PCPClient extends javax.swing.JFrame{
 
     private void SendButMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMousePressed
         String message = WText.getText();
+        WText.setText("");
         Messages.userToChatSend(message);
     }//GEN-LAST:event_SendButMousePressed
+
+    private void DeleteButMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButMousePressed
+        WText.setText("");
+    }//GEN-LAST:event_DeleteButMousePressed
 
    public void ListModification(ArrayList<String> ls, int setter){
         
@@ -554,8 +562,8 @@ public class PCPClient extends javax.swing.JFrame{
 
     int x,y;
     
-    public void showMessage(Message message){
-        jTextAreaChat.setText(message.toString());
+    public void showMessage(String chat){
+        jTextAreaChat.setText(chat);
     }
     
     /**
@@ -598,6 +606,7 @@ public class PCPClient extends javax.swing.JFrame{
         });
             
             Group.createGroup();        //creating group
+            String chatMessages = new String();
             while(true){
                 while(Group.getGroupMessages().isEmpty()){
                     try {
@@ -607,11 +616,11 @@ public class PCPClient extends javax.swing.JFrame{
                     }
                 }
                 List<Message> currentMessages = Group.getGroupMessages();
-                for(Message m : currentMessages){
-                    //show message to gui
-                    pcp.showMessage(m);
-                    Group.removeMessage(m);
-                }
+                Message currentMessage = currentMessages.get(0);
+                String message = currentMessage.toString();
+                chatMessages += message;
+                pcp.showMessage(chatMessages);
+                Group.removeMessage(currentMessage);
             }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
