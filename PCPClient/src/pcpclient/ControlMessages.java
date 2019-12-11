@@ -76,8 +76,8 @@ public class ControlMessages {
                     //json array to java list
                     listJava = gson.fromJson(listJSON, aliasListType);                  
                     
-                    GroupUsers.setAliasList(listJava);
-                    GroupUsers.setAliasListUpdated(true);
+                    Group.setAliasList(listJava);
+                    Group.setAliasListUpdated(true);
                     System.out.println("Complete users list received: " + listJSON);
                     break;
                 case 1:
@@ -93,8 +93,8 @@ public class ControlMessages {
                     //json array to java list
                     listJava = gson.fromJson(listJSON, aliasListType);  
                     
-                    GroupUsers.addAlias(listJava.get(0));
-                    GroupUsers.setAliasListUpdated(true);
+                    Group.addAlias(listJava.get(0));
+                    Group.setAliasListUpdated(true);
                     System.out.println("Joined user list received: " + listJSON);
                     break;
                 case 2:
@@ -110,8 +110,8 @@ public class ControlMessages {
                     //json array to java list
                     listJava = gson.fromJson(listJSON, aliasListType);
                     
-                    GroupUsers.removeAlias(listJava.get(0));
-                    GroupUsers.setAliasListUpdated(true);
+                    Group.removeAlias(listJava.get(0));
+                    Group.setAliasListUpdated(true);
                     System.out.println("Disconnected user list received: " + listJSON);
                     break;
         }

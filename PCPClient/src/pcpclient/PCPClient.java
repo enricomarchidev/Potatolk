@@ -169,6 +169,9 @@ public class PCPClient extends javax.swing.JFrame{
 
         SendBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png"))); // NOI18N
         SendBut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SendButMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 SendButMouseEntered(evt);
             }
@@ -272,7 +275,7 @@ public class PCPClient extends javax.swing.JFrame{
 
         jScrollPane3.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane3.setCursor(new java.awt.Cursor(java.awt.Cursor.SE_RESIZE_CURSOR));
+        jScrollPane3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane3.setPreferredSize(new java.awt.Dimension(240, 130));
 
         UserList.setBackground(new java.awt.Color(92, 92, 92));
@@ -413,13 +416,13 @@ public class PCPClient extends javax.swing.JFrame{
         
     }//GEN-LAST:event_LogOutButMouseEntered
 
-    private void LogOutButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutButMouseClicked
+    private void LogOutButMouseClicked(java.awt.event.MouseEvent evt) {                                       
        
-    //private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    //private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {                                     
         //setState(javax.swing.JFrame.ICONIFIED);
         //PCPOut.setVisible(true);
         
-    }//GEN-LAST:event_LogOutButMouseClicked
+    }                                      
 
     private void DashButMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DashButMouseExited
        
@@ -495,6 +498,11 @@ public class PCPClient extends javax.swing.JFrame{
             }
             
     }//GEN-LAST:event_UserPaneMouseClicked
+
+    private void SendButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMouseClicked
+        String message = WText.getText();
+        Messages.userToChatSend(message);
+    }//GEN-LAST:event_SendButMouseClicked
 
    public void ListModification(ArrayList<String> ls, int setter){
         

@@ -27,7 +27,7 @@ public class Connection {
     private static String alias;
     private static List<byte[]> packetsReceived;
 
-    public static void connection() {
+    public static void createConnection() {
         try {
             client = new Socket("127.0.0.1",53101);
             //client.setSoTimeout(2000);

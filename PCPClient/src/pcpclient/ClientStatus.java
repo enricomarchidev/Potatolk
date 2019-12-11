@@ -35,9 +35,7 @@ public class ClientStatus {
         // packet index
         int index = 0;
         
-        
         // opcode
-        
         packet[index++] = 10;
    
         
@@ -74,7 +72,7 @@ public class ClientStatus {
         try {
 
             //creating a TCP connection with the server
-            Connection.connection();
+            Connection.createConnection();
             Connection.setAlias(alias);
             //Socket client = Connection.getSocket();
             DataInputStream is = Connection.getIs();
@@ -102,7 +100,8 @@ public class ClientStatus {
                 //alias_confirmation_string.replaceAll("\\P{Print}","");
                 
                 if (alias.equals(alias_confirmation_string)){
-                    GroupUsers.users();                     //creating users object
+                    Group.createGroup();        //creating group
+                    Group.setTopic(topic);
                     packetReceiver receiverThread = new packetReceiver();
                     packetInterpreter interpreterThread = new packetInterpreter();
                     receiverThread.start();

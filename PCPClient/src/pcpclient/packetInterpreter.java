@@ -22,7 +22,7 @@ public class packetInterpreter extends Thread{
         while(true){
             while(Connection.getPacketsReceived().isEmpty()){
                 try {
-                    sleep(1000);
+                    sleep(100);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(packetInterpreter.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -33,6 +33,9 @@ public class packetInterpreter extends Thread{
                 case 51:
                     //opcode 51
                     ControlMessages.groupUsersListParse(packetReceived);
+                    break;
+                case 5:
+                    Messages.userToChatReceive(packetReceived);
                     break;
             }
             Connection.removePacket(packetReceived);        //packet processed
