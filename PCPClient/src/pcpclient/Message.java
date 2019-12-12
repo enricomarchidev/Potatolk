@@ -36,7 +36,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return sourceAlias + ":  " + text + '\n';
+        return "  " + sourceAlias + ":  " + text + '\n';
     }
     
 }

@@ -250,7 +250,7 @@ public class PCPClient extends javax.swing.JFrame{
                 .addContainerGap())
         );
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 459, 590, -1));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 590, 80));
 
         UpperBar.setBackground(new java.awt.Color(32, 34, 37));
         UpperBar.setPreferredSize(new java.awt.Dimension(100, 24));
@@ -306,12 +306,12 @@ public class PCPClient extends javax.swing.JFrame{
         jScrollPane3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane3.setPreferredSize(new java.awt.Dimension(240, 130));
 
-        UserList.setBackground(new java.awt.Color(92, 92, 92));
+        UserList.setBackground(new java.awt.Color(22, 24, 27));
         UserList.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         UserList.setForeground(new java.awt.Color(230, 230, 230));
         UserList.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         UserList.setPreferredSize(new java.awt.Dimension(240, 40));
-        UserList.setSelectionBackground(new java.awt.Color(192, 192, 192));
+        UserList.setSelectionBackground(new java.awt.Color(82, 82, 82));
         jScrollPane3.setViewportView(UserList);
 
         javax.swing.GroupLayout jPanelListLayout = new javax.swing.GroupLayout(jPanelList);
@@ -319,18 +319,17 @@ public class PCPClient extends javax.swing.JFrame{
         jPanelListLayout.setHorizontalGroup(
             jPanelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelListLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelListLayout.setVerticalGroup(
             jPanelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelListLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelListLayout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 61, Short.MAX_VALUE))
         );
 
-        jPanel4.add(jPanelList, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 239, 490));
+        jPanel4.add(jPanelList, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 239, 520));
 
         UserListPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/user_pane.png"))); // NOI18N
         UserListPane.setAutoscrolls(true);
@@ -403,7 +402,7 @@ public class PCPClient extends javax.swing.JFrame{
         jTextAreaChat.setSelectionColor(new java.awt.Color(54, 57, 63));
         jScrollPane4.setViewportView(jTextAreaChat);
 
-        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 570, 420));
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 570, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -561,7 +560,7 @@ public class PCPClient extends javax.swing.JFrame{
                 
                 //ls.add("Ciccio");
                 
-                ListModification(ls, set);   
+                ListModification(Group.getAliasList(), set);   
                 
             }else if(y == 40){
                 
@@ -615,7 +614,7 @@ public class PCPClient extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_loggedInActionPerformed
 
-   public void ListModification(ArrayList<String> ls, int setter){
+   public void ListModification(List<String> ls, int setter){
         
        if(setter == 0){ 
            
