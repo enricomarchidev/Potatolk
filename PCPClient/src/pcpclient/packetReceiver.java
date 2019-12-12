@@ -20,6 +20,7 @@ public class packetReceiver extends Thread{
     byte[] pkt = new byte[2048];                            //PCP received packet
     DataInputStream is = Connection.getIs();
     
+    //this thread receives all packets and put them into the list packetsReceived
     @Override
     public void run() {
         this.setName("packetReceiver");
@@ -28,7 +29,6 @@ public class packetReceiver extends Thread{
             try {
                 is.read(pkt);
                 Connection.addPacket(pkt);
-                //notify();
                 pkt = new byte[2048];
             } catch (IOException ex) {
                 Logger.getLogger(packetReceiver.class.getName()).log(Level.SEVERE, null, ex);

@@ -18,7 +18,7 @@ public class ClientStatus {
     
     public static boolean registration(String alias, String topic) {
         
-        // creation of th PCP packet
+        // creation of the PCP packet
         
         byte[] packet = new byte[2048];                         //PCP packet to send
         
@@ -65,8 +65,7 @@ public class ClientStatus {
             
             packet[index++] = b;
         
-        // byte separator
-        
+        // byte separator       
         packet[index++] = 0;
         
         try {
@@ -74,7 +73,6 @@ public class ClientStatus {
             //creating a TCP connection with the server
             Connection.createConnection();
             
-            //Socket client = Connection.getSocket();
             DataInputStream is = Connection.getIs();
             DataOutputStream os = Connection.getOs();
 
@@ -112,9 +110,6 @@ public class ClientStatus {
                 }
             }
             
-            //errors section
-            //then use error class to manage pkt
-            
             return false;
             
         } catch (IOException ex) {
@@ -130,11 +125,11 @@ public class ClientStatus {
         byte[] packet = new byte[3];                         //PCP packet to send
         byte[] privateId = Connection.getId();
         
-        Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
+        Set<Thread> threadSet = Thread.getAllStackTraces().keySet();    //this a set that contains all the thread objects of the application
         //System.out.println(t.getName());
         for(Thread t : threadSet){
             if(t.getName().equals("packetReceiver")){
-                t.interrupt();
+                t.interrupt();          //interrupt the packetReceiver thread before the socket close, preventing some errors
             }
         }
         
@@ -153,7 +148,7 @@ public class ClientStatus {
         DataInputStream is = Connection.getIs();
         try {
             os.write(packet);
-            //threads stop
+            //closing TCP connection as said through the packet sent to the server
             is.close();
             os.close();
             clientSocket.close();
@@ -190,7 +185,7 @@ public class ClientStatus {
         for (byte b: newAlias.getBytes())
             packet[index++] = b;
         
-        // byte separatore
+        // byte separator
         packet[index++] = 0;
         
         DataOutputStream os = Connection.getOs();
