@@ -38,7 +38,7 @@ public class Messages {
         for (byte b: message.getBytes())
             packet[index++] = b;
         
-        // byte separatore
+        // byte separator
         packet[index++] = 0;
         
         DataOutputStream os = Connection.getOs();

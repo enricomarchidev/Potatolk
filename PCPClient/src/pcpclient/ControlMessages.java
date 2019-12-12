@@ -24,7 +24,8 @@ import com.google.gson.reflect.TypeToken;
  */
 public class ControlMessages {
     public static void groupUsersListRequest(){
-        // creazione del pacchetto PCP
+        
+        // creation of the PCP packet
         byte[] packet = new byte[2048];                         //PCP packet to send
         byte[] pkt = new byte[2048];
         byte[] assigned_id = Connection.getId();
@@ -42,11 +43,7 @@ public class ControlMessages {
         DataOutputStream os = Connection.getOs();
         DataInputStream is = Connection.getIs();
         try {
-            os.write(packet);
-            //is.read(pkt);
-            //while(pkt[0] != 51){        //pkt[0] is the opcode    
-                //is.read(pkt);
-            //}               
+            os.write(packet);           
         } catch (IOException ex) {
             Logger.getLogger(ClientStatus.class.getName()).log(Level.SEVERE, null, ex);
         }     
@@ -77,10 +74,9 @@ public class ControlMessages {
                     listJava = gson.fromJson(listJSON, aliasListType);                  
                     
                     Group.setAliasList(listJava);
-                    Group.setAliasListUpdated(true);
                     System.out.println("Complete users list received: " + listJSON);
                     break;
-                case 1:
+                case 1:         //added users list
                     listByte = Arrays.copyOfRange(pkt, 3, listByte.length + 3);
                     for(byte b : listByte){
                         if(b != 0){
@@ -94,10 +90,9 @@ public class ControlMessages {
                     listJava = gson.fromJson(listJSON, aliasListType);  
                     
                     Group.addAlias(listJava.get(0));
-                    Group.setAliasListUpdated(true);
                     System.out.println("Joined user list received: " + listJSON);
                     break;
-                case 2:
+                case 2:         //remove users list
                     listByte = Arrays.copyOfRange(pkt, 3, listByte.length + 3);
                     for(byte b : listByte){
                         if(b != 0){
@@ -111,7 +106,6 @@ public class ControlMessages {
                     listJava = gson.fromJson(listJSON, aliasListType);
                     
                     Group.removeAlias(listJava.get(0));
-                    Group.setAliasListUpdated(true);
                     System.out.println("Disconnected user list received: " + listJSON);
                     break;
         }
