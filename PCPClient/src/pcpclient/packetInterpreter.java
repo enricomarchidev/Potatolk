@@ -16,6 +16,7 @@ import java.util.logging.Logger;
  */
 public class packetInterpreter extends Thread{
 
+    //this thread interprets all packets of the list packetsReceived
     @Override
     public void run() {
         this.setName("packetInterpreter");
@@ -35,6 +36,7 @@ public class packetInterpreter extends Thread{
                     ControlMessages.groupUsersListParse(packetReceived);
                     break;
                 case 5:
+                    //opcode 05
                     Messages.userToChatReceive(packetReceived);
                     break;
             }
