@@ -60,7 +60,7 @@ public class PCPLogin extends javax.swing.JFrame {
         TopicTxt.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         TopicTxt.setForeground(new java.awt.Color(153, 153, 153));
         TopicTxt.setToolTipText("");
-        TopicTxt.setBorder(null);
+        TopicTxt.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         TopicTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 TopicTxtKeyPressed(evt);
@@ -72,7 +72,7 @@ public class PCPLogin extends javax.swing.JFrame {
         AliasTxt.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         AliasTxt.setForeground(new java.awt.Color(153, 153, 153));
         AliasTxt.setToolTipText("");
-        AliasTxt.setBorder(null);
+        AliasTxt.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         AliasTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 AliasTxtKeyPressed(evt);

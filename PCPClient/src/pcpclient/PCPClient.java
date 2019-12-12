@@ -174,7 +174,7 @@ public class PCPClient extends javax.swing.JFrame{
         WText.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         WText.setForeground(new java.awt.Color(153, 153, 153));
         WText.setToolTipText("");
-        WText.setBorder(null);
+        WText.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         WText.setDisabledTextColor(new java.awt.Color(163, 163, 163));
         WText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -578,13 +578,30 @@ public class PCPClient extends javax.swing.JFrame{
     }//GEN-LAST:event_UserPaneMouseClicked
 
     private void SendButMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMousePressed
-        
+         AnimationClass anim = new AnimationClass();
+            
+            int y = UserPane.getY();
+            
+            int set;
+            
+            if(y == 40){
+                
+                anim.jLabelXLeft(UserListPane.getX(), -190, 3, 3, UserListPane);
+                anim.jLabelXLeft(UserPane.getX(), 62, 3, 3, UserPane);
+                
+                anim.jLabelYDown(UserPane.getY(), 390, 3, 2, UserPane);
+                
+                set = 1;
+                
+                ListModification(ls, set);
+
+            }
+            
         String message = WText.getText();
-        WText.setText("");
         
-        if(!jTextArea1.equals("")){
-            Messages.userToChatSend(message);
-        }
+        Messages.userToChatSend(message);
+            
+        WText.setText("");
         
     }//GEN-LAST:event_SendButMousePressed
 
@@ -597,14 +614,30 @@ public class PCPClient extends javax.swing.JFrame{
     private void WTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_WTextKeyPressed
         
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            AnimationClass anim = new AnimationClass();
             
-        String message = WText.getText();
-        
-        if(!jTextArea1.equals("")){
+            int y = UserPane.getY();
+            
+            int set;
+            
+            if(y == 40){
+                
+                anim.jLabelXLeft(UserListPane.getX(), -190, 3, 3, UserListPane);
+                anim.jLabelXLeft(UserPane.getX(), 62, 3, 3, UserPane);
+                
+                anim.jLabelYDown(UserPane.getY(), 390, 3, 2, UserPane);
+                
+                set = 1;
+                
+                ListModification(ls, set);
+
+            }
+                    
+            String message = WText.getText();
+
             Messages.userToChatSend(message);
-        }
-        
-        WText.setText("");
+
+            WText.setText("");
         
         }
         
