@@ -368,8 +368,8 @@ public class PCPClient extends javax.swing.JFrame{
         Chat.setBackground(new java.awt.Color(54, 57, 63));
         Chat.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Chat.setForeground(new java.awt.Color(0, 255, 204));
-        Chat.setBorder(null);
-        jPanel4.add(Chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, -1));
+        Chat.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        jPanel4.add(Chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, 100, -1));
 
         loggedIn.setEditable(false);
         loggedIn.setBackground(new java.awt.Color(54, 57, 63));
@@ -385,11 +385,17 @@ public class PCPClient extends javax.swing.JFrame{
         });
         jPanel4.add(loggedIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 120, -1));
 
+        Alias.setEditable(false);
         Alias.setBackground(new java.awt.Color(54, 57, 63));
         Alias.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Alias.setForeground(new java.awt.Color(0, 255, 204));
-        Alias.setBorder(null);
-        jPanel4.add(Alias, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
+        Alias.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        Alias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AliasActionPerformed(evt);
+            }
+        });
+        jPanel4.add(Alias, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 220, -1));
 
         jTextAreaChat.setEditable(false);
         jTextAreaChat.setBackground(new java.awt.Color(54, 57, 63));
@@ -646,6 +652,10 @@ public class PCPClient extends javax.swing.JFrame{
     private void loggedInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loggedInActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_loggedInActionPerformed
+
+    private void AliasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AliasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AliasActionPerformed
 
    public void ListModification(List<String> ls, int setter){
         
