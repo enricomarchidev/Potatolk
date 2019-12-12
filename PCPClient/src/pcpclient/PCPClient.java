@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.text.DefaultCaret;
 
 
 
@@ -40,7 +41,8 @@ public class PCPClient extends javax.swing.JFrame{
         ls = new ArrayList<String>();
         model = new DefaultListModel<String>();
         jPanelList.setVisible(false);
-        
+        DefaultCaret caret = (DefaultCaret)jTextAreaChat.getCaret();
+        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
     }
 
     public JTextField getAlias() {
@@ -368,7 +370,7 @@ public class PCPClient extends javax.swing.JFrame{
         Chat.setBackground(new java.awt.Color(54, 57, 63));
         Chat.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Chat.setForeground(new java.awt.Color(0, 255, 204));
-        Chat.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        Chat.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel4.add(Chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, 100, -1));
 
         loggedIn.setEditable(false);
@@ -389,7 +391,7 @@ public class PCPClient extends javax.swing.JFrame{
         Alias.setBackground(new java.awt.Color(54, 57, 63));
         Alias.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Alias.setForeground(new java.awt.Color(0, 255, 204));
-        Alias.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        Alias.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Alias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AliasActionPerformed(evt);
@@ -408,7 +410,7 @@ public class PCPClient extends javax.swing.JFrame{
         jTextAreaChat.setSelectionColor(new java.awt.Color(54, 57, 63));
         jScrollPane4.setViewportView(jTextAreaChat);
 
-        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 570, 400));
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 580, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
