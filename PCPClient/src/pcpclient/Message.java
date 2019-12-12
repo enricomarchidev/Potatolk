@@ -23,7 +23,7 @@ public class Message {
     }
 
     public void setSourceAlias(String sourceAlias) {
-        this.sourceAlias = sourceAlias;
+        this.sourceAlias = sourceAlias;  
     }
 
     public String getText() {
@@ -36,7 +36,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return sourceAlias + "    " + text;
+        return "  " + sourceAlias + ":  " + text + '\n';
     }
     
 }

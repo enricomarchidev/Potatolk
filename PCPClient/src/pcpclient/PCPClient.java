@@ -7,8 +7,15 @@
 package pcpclient;
 
 import AppPackage.AnimationClass;
+import java.awt.event.KeyEvent;
+import static java.lang.Thread.sleep;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 
@@ -32,9 +39,16 @@ public class PCPClient extends javax.swing.JFrame{
         PCPOut = new PCPLogout();
         ls = new ArrayList<String>();
         model = new DefaultListModel<String>();
-        
         jPanelList.setVisible(false);
         
+    }
+
+    public JTextField getAlias() {
+        return Alias;
+    }
+
+    public JTextField getChat() {
+        return Chat;
     }
 
     @SuppressWarnings("unchecked")
@@ -68,6 +82,12 @@ public class PCPClient extends javax.swing.JFrame{
         UserPane = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        chatRoom = new javax.swing.JTextField();
+        Chat = new javax.swing.JTextField();
+        loggedIn = new javax.swing.JTextField();
+        Alias = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextAreaChat = new javax.swing.JTextArea();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -156,6 +176,11 @@ public class PCPClient extends javax.swing.JFrame{
         WText.setToolTipText("");
         WText.setBorder(null);
         WText.setDisabledTextColor(new java.awt.Color(163, 163, 163));
+        WText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                WTextKeyPressed(evt);
+            }
+        });
 
         DeleteBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Canc_but.png"))); // NOI18N
         DeleteBut.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -165,18 +190,21 @@ public class PCPClient extends javax.swing.JFrame{
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 DeleteButMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                DeleteButMousePressed(evt);
+            }
         });
 
         SendBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Send_but.png"))); // NOI18N
         SendBut.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SendButMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 SendButMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 SendButMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                SendButMousePressed(evt);
             }
         });
 
@@ -222,7 +250,7 @@ public class PCPClient extends javax.swing.JFrame{
                 .addContainerGap())
         );
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 459, 590, -1));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 590, 80));
 
         UpperBar.setBackground(new java.awt.Color(32, 34, 37));
         UpperBar.setPreferredSize(new java.awt.Dimension(100, 24));
@@ -278,12 +306,12 @@ public class PCPClient extends javax.swing.JFrame{
         jScrollPane3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane3.setPreferredSize(new java.awt.Dimension(240, 130));
 
-        UserList.setBackground(new java.awt.Color(92, 92, 92));
+        UserList.setBackground(new java.awt.Color(22, 24, 27));
         UserList.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         UserList.setForeground(new java.awt.Color(230, 230, 230));
         UserList.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         UserList.setPreferredSize(new java.awt.Dimension(240, 40));
-        UserList.setSelectionBackground(new java.awt.Color(192, 192, 192));
+        UserList.setSelectionBackground(new java.awt.Color(82, 82, 82));
         jScrollPane3.setViewportView(UserList);
 
         javax.swing.GroupLayout jPanelListLayout = new javax.swing.GroupLayout(jPanelList);
@@ -291,12 +319,14 @@ public class PCPClient extends javax.swing.JFrame{
         jPanelListLayout.setHorizontalGroup(
             jPanelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelListLayout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelListLayout.setVerticalGroup(
             jPanelListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+            .addGroup(jPanelListLayout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 61, Short.MAX_VALUE))
         );
 
         jPanel4.add(jPanelList, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 239, 520));
@@ -321,10 +351,58 @@ public class PCPClient extends javax.swing.JFrame{
 
         jLabel6.setBackground(new java.awt.Color(54, 57, 63));
         jLabel6.setOpaque(true);
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 30, 30));
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 30, 430));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OthersComponent/angle.png"))); // NOI18N
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 21, 10, 30));
+
+        chatRoom.setEditable(false);
+        chatRoom.setBackground(new java.awt.Color(54, 57, 63));
+        chatRoom.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        chatRoom.setForeground(new java.awt.Color(255, 255, 255));
+        chatRoom.setText("Chat room:");
+        chatRoom.setBorder(null);
+        jPanel4.add(chatRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, -1));
+
+        Chat.setEditable(false);
+        Chat.setBackground(new java.awt.Color(54, 57, 63));
+        Chat.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Chat.setForeground(new java.awt.Color(0, 255, 204));
+        Chat.setBorder(null);
+        jPanel4.add(Chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, -1));
+
+        loggedIn.setEditable(false);
+        loggedIn.setBackground(new java.awt.Color(54, 57, 63));
+        loggedIn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        loggedIn.setForeground(new java.awt.Color(255, 255, 255));
+        loggedIn.setText("You are logged in as");
+        loggedIn.setToolTipText("");
+        loggedIn.setBorder(null);
+        loggedIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loggedInActionPerformed(evt);
+            }
+        });
+        jPanel4.add(loggedIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 120, -1));
+
+        Alias.setBackground(new java.awt.Color(54, 57, 63));
+        Alias.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Alias.setForeground(new java.awt.Color(0, 255, 204));
+        Alias.setBorder(null);
+        jPanel4.add(Alias, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
+
+        jTextAreaChat.setEditable(false);
+        jTextAreaChat.setBackground(new java.awt.Color(54, 57, 63));
+        jTextAreaChat.setColumns(20);
+        jTextAreaChat.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        jTextAreaChat.setForeground(new java.awt.Color(255, 255, 255));
+        jTextAreaChat.setRows(5);
+        jTextAreaChat.setBorder(null);
+        jTextAreaChat.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextAreaChat.setSelectionColor(new java.awt.Color(54, 57, 63));
+        jScrollPane4.setViewportView(jTextAreaChat);
+
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 570, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -482,7 +560,7 @@ public class PCPClient extends javax.swing.JFrame{
                 
                 //ls.add("Ciccio");
                 
-                ListModification(ls, set);   
+                ListModification(Group.getAliasList(), set);   
                 
             }else if(y == 40){
                 
@@ -499,12 +577,44 @@ public class PCPClient extends javax.swing.JFrame{
             
     }//GEN-LAST:event_UserPaneMouseClicked
 
-    private void SendButMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMouseClicked
+    private void SendButMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendButMousePressed
+        
         String message = WText.getText();
-        Messages.userToChatSend(message);
-    }//GEN-LAST:event_SendButMouseClicked
+        WText.setText("");
+        
+        if(!jTextArea1.equals("")){
+            Messages.userToChatSend(message);
+        }
+        
+    }//GEN-LAST:event_SendButMousePressed
 
-   public void ListModification(ArrayList<String> ls, int setter){
+    private void DeleteButMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButMousePressed
+        
+        WText.setText("");
+        
+    }//GEN-LAST:event_DeleteButMousePressed
+
+    private void WTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_WTextKeyPressed
+        
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            
+        String message = WText.getText();
+        
+        if(!jTextArea1.equals("")){
+            Messages.userToChatSend(message);
+        }
+        
+        WText.setText("");
+        
+        }
+        
+    }//GEN-LAST:event_WTextKeyPressed
+
+    private void loggedInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loggedInActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loggedInActionPerformed
+
+   public void ListModification(List<String> ls, int setter){
         
        if(setter == 0){ 
            
@@ -539,6 +649,12 @@ public class PCPClient extends javax.swing.JFrame{
 
     int x,y;
     
+    public void showMessage(String chat){
+        
+            jTextAreaChat.setText(chat);  
+     
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -568,16 +684,59 @@ public class PCPClient extends javax.swing.JFrame{
         //</editor-fold>
 
         /* Create and display the form */
+        PCPClient pcp = new PCPClient();
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
             public void run() {
-                PCPLogin pcplog = new PCPLogin();
-                pcplog.setVisible(true);
                 
+                PCPLogin pcplog = new PCPLogin(pcp);
+                pcplog.setVisible(true);
                 //new PCPClient().setVisible(true);
+                
             }
+            
         });
+        
+            
+            Group.createGroup();        //creating group
+            String chatMessages = new String();
+            
+            while(true){
+                
+                while(Group.getGroupMessages().isEmpty()){
+                    
+                    try {
+                        
+                        sleep(100);
+                        
+                    } catch (InterruptedException ex) {
+                        
+                        Logger.getLogger(PCPClient.class.getName()).log(Level.SEVERE, null, ex);
+                        
+                    }
+                    
+                }
+                
+                List<Message> currentMessages = Group.getGroupMessages();
+                
+                Message currentMessage = currentMessages.get(0);
+                
+                String message = currentMessage.toString();
+                
+                chatMessages += message;
+                
+                pcp.showMessage(chatMessages);
+                
+                Group.removeMessage(currentMessage);
+                
+                
+                
+            }
+            
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Alias;
+    private javax.swing.JTextField Chat;
     private javax.swing.JLabel DashBut;
     private javax.swing.JLabel DeleteBut;
     private javax.swing.JLabel LogOutBut;
@@ -589,6 +748,7 @@ public class PCPClient extends javax.swing.JFrame{
     private javax.swing.JLabel UserPane;
     private javax.swing.JTextField WText;
     private javax.swing.JLabel XBut;
+    private javax.swing.JTextField chatRoom;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
@@ -601,10 +761,13 @@ public class PCPClient extends javax.swing.JFrame{
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaChat;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextField loggedIn;
     // End of variables declaration//GEN-END:variables
 
 }
