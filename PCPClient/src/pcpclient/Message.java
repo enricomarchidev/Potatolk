@@ -23,7 +23,7 @@ public class Message {
     }
 
     public void setSourceAlias(String sourceAlias) {
-        this.sourceAlias = sourceAlias;
+        this.sourceAlias = sourceAlias;  
     }
 
     public String getText() {

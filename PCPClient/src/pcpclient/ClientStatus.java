@@ -73,7 +73,7 @@ public class ClientStatus {
 
             //creating a TCP connection with the server
             Connection.createConnection();
-            Connection.setAlias(alias);
+            
             //Socket client = Connection.getSocket();
             DataInputStream is = Connection.getIs();
             DataOutputStream os = Connection.getOs();
@@ -100,6 +100,7 @@ public class ClientStatus {
                 //alias_confirmation_string.replaceAll("\\P{Print}","");
                 
                 if (alias.equals(alias_confirmation_string)){
+                    Connection.setAlias(alias);
                     Group.createGroup();        //creating group
                     Group.setTopic(topic);
                     packetReceiver receiverThread = new packetReceiver();

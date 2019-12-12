@@ -24,7 +24,7 @@ public class Connection {
     private static DataInputStream is;
     private static DataOutputStream os;
     private static byte[] id = new byte[2];     //private id
-    private static String alias;
+    private static String alias = new String();
     private static List<byte[]> packetsReceived;
 
     public static void createConnection() {

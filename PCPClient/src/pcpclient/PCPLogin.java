@@ -61,6 +61,11 @@ public class PCPLogin extends javax.swing.JFrame {
         TopicTxt.setForeground(new java.awt.Color(153, 153, 153));
         TopicTxt.setToolTipText("");
         TopicTxt.setBorder(null);
+        TopicTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TopicTxtKeyPressed(evt);
+            }
+        });
         jPanel1.add(TopicTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 119, 86, 36));
 
         AliasTxt.setBackground(new java.awt.Color(64, 68, 75));
@@ -252,6 +257,8 @@ public class PCPLogin extends javax.swing.JFrame {
         
             if(registrated){
                 
+                pcpc.getAlias().setText(Connection.getAlias());
+                pcpc.getChat().setText(Group.getTopic());
                 pcpc.setVisible(true);
                 this.setVisible(false);
             }
@@ -391,9 +398,12 @@ public class PCPLogin extends javax.swing.JFrame {
                 }
 
                 if(registrated){
-
+                    
+                    pcpc.getAlias().setText(Connection.getAlias());
+                    pcpc.getChat().setText(Group.getTopic());
                     pcpc.setVisible(true);
                     this.setVisible(false);
+                    
                 }
 
             }
@@ -401,6 +411,59 @@ public class PCPLogin extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_AliasTxtKeyPressed
+
+    private void TopicTxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TopicTxtKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+
+            //The boolean variable called registrated is set to false
+            boolean registrated = false;
+
+            /**
+            * The following 'if' control if there is a
+            * correct alias in the AliasTxt
+            */
+            if(AliasTxt.getText().equals("")){
+
+                JOptionPane.showMessageDialog(rootPane, "You need to insert a Username");
+
+                ErrUserImg.setVisible(true);
+                ErrUser.setVisible(true);
+
+            }else if(AliasTxt.getText().length() < 6){
+
+                JOptionPane.showMessageDialog(rootPane, "Username minimum lenght must be 6 characters");
+
+            }else if(AliasTxt.getText().length() > 32){
+
+                JOptionPane.showMessageDialog(rootPane, "Username maximum lenght must be 32 characters");
+
+            }else{
+
+                String alias = AliasTxt.getText();
+                String topic = TopicTxt.getText();
+
+                if(!registrated){
+
+                    if(ClientStatus.registration(alias, topic)){
+
+                        registrated = true;
+                    }
+                }
+
+                if(registrated){
+                    
+                    pcpc.getAlias().setText(Connection.getAlias());
+                    pcpc.getChat().setText(Group.getTopic());
+                    pcpc.setVisible(true);
+                    this.setVisible(false);
+                    
+                }
+
+            }
+
+        }
+        
+    }//GEN-LAST:event_TopicTxtKeyPressed
 
     /**
      * @param args the command line arguments

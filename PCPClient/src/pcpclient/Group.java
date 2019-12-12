@@ -15,7 +15,7 @@ import java.util.List;
 public class Group {
     private static List<String> aliasList;
     private static boolean aliasListUpdated;
-    private static String topic;
+    private static String topic = new String();
     private static List<Message> groupMessages;
     //list of User objects
     
