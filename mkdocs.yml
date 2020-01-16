@@ -1,6 +1,7 @@
 site_name: 2020_5eI_Team3
 nav:
-
+     - 'Business Model Canvas': 'Business Model Canvas.pdf'
+     - 'Project Charter': 'Project Charter.pdf'
     
 theme:
     name: readthedocs
