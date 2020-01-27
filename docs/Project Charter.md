@@ -1,7 +1,9 @@
 Document Owner: Enrico Marchi
 
-**Project Title:** Potatolk (A PotatoChatProtocol client)
-**Start Date:** 18/10/2019 &emsp;&emsp;&emsp; **End Date:** 13/12/2019
+**Project Title:** 
+# Potatolk (A PotatoChatProtocol client side)
+**Start Date:** 18/10/2019 
+**End Date:** 13/12/2019
 **Project Manager:** Enrico Marchi
 **Project Sponsor:** ITI G. Marconi Verona
 **Customer:** Professor  Antonio Sette
@@ -46,7 +48,7 @@ The app is expected to:
 13/12/2019 - Product Released
 
 **Financial Information (Cost estimate and budget information)**:
-This is a school project so there isn’t a budget because all team members (students) works free in order to learn how to develop a good software.
+This is a school project so there isnâ€™t a budget because all team members (students) works free in order to learn how to develop a good software.
 
 **Project Priorities and degrees of freedom:** 
 The project end date is fixed because the customer request the software working with minimum functionalities by the 13th of December. Roles are changeable based on workloads of individual team members.  Roles are expected to shift throughout the project as needs arise.
@@ -70,7 +72,7 @@ The project will be considered a success if (1) the team delivers an operational
 At the minimum, the software will (1) allow users to receive and send messages in a group chat. Time permitting, the scope could be extended to include all features supported by the server that implements the PotatoChatProtocol.
 
 **Risks and obstacles to success**:  
-A risk the team face is a lack of experience in developing network application.  This lack of experience generates a lot of unknowns. We do not yet have a clear picture of how the code will be implemented. So, there is the possibility that application won’t support all features within 13th of December.
+A risk the team face is a lack of experience in developing network application.  This lack of experience generates a lot of unknowns. We do not yet have a clear picture of how the code will be implemented. So, there is the possibility that application wonâ€™t support all features within 13th of December.
 
 **Signature**
 
