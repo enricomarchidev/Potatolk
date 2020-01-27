@@ -1,13 +1,12 @@
 Document Owner: Enrico Marchi
 
-**Project Title:** 
-# Potatolk (A PotatoChatProtocol client side)
-**Start Date:** 18/10/2019 
-**End Date:** 13/12/2019
-**Project Manager:** Enrico Marchi
-**Project Sponsor:** ITI G. Marconi Verona
-**Customer:** Professor  Antonio Sette
-**Users:** 5^EI Students
+| **Project Title:** | Potatolk (A PotatoChatProtocol client side) |
+| **Start Date:** | 18/10/2019 |
+|**End Date:** | 13/12/2019 |
+| **Project Manager:** | Enrico Marchi |
+| **Project Sponsor:** | ITI G. Marconi Verona |
+| **Customer:** | Teacher Antonio Sette |
+| **Users:** | 5^EI Students |
 
 **Stakeholders and Expectations:**
 Team: Have a working client application that implements all protocol specifications.
