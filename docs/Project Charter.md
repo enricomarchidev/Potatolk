@@ -1,6 +1,6 @@
 Document Owner: Enrico Marchi
 
-**Project Title:** # Potatolk (A PotatoChatProtocol client side) 
+**Project Title:** Potatolk (A PotatoChatProtocol client side) 
 
 **Start Date:**  18/10/2019 
 
@@ -78,17 +78,3 @@ At the minimum, the software will (1) allow users to receive and send messages i
 
 ## Risks and obstacles to success  
 A risk the team face is a lack of experience in developing network application.  This lack of experience generates a lot of unknowns. We do not yet have a clear picture of how the code will be implemented. So, there is the possibility that application won’t support all features within 13th of December.
-
-**Signature**
-
-Enrico Marchi  
-**Project Manager**
-
-**__________________________________** 
-**Project Sponsor**
-
-**__________________________________**  
-**Customer**
-
-**__________________________________**  
-**Technical Lead**
