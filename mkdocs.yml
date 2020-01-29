@@ -1,8 +1,11 @@
 site_name: 2020_5EI_Team3
 nav:
-     - 'Business Model Canvas': 'Business Model Canvas.pdf'
-     - 'index': 'index.md'
      - 'Project Charter': 'Project Charter.md'
+     - 'Software Requirements Specification PDF': 'Software Requirements Specification.pdf'
+     - 'Software Project Management Plan': 'Software Project Management Plan.md'
+     - 'Software Project Management Plan PDF': 'Software Project Management Plan.pdf'
+     - 'Business Model Canvas': 'Business Model Canvas.pdf'
+     - 'Project Model Canvas': 'Project Model Canvas.pdf'     
     
 theme:
     name: readthedocs
