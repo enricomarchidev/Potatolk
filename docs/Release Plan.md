@@ -55,3 +55,8 @@
 |Implementation of all the methods|15hrs|10hrs|
 |Changes to improve the graphic and the functioning of the program|15hrs|10hrs|
 |Totals:|50hrs|35hrs|
+### **Features not scheduled but under consideration**
+|**Features**|**Estimated Effort**|
+|--------|--------|
+|Fixed all bugs of the program|100-150 hrs|
+|Meetings to understand the progress of work|50-75 hrs|
