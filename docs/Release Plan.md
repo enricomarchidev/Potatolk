@@ -41,11 +41,17 @@
 |Start the implementation of the graphic user interface|25hrs|35hrs|
 |Totals:|55hrs|67hrs|
 ### **Interation 2**
-**Objective**: The purpose of this iteration is to implement all methods and interfaces according to the established division of labour .
+**Objective**: The purpose of this iteration is to implement all the classes according to the established division of labour.
 |**Features / Activities / Deliverables**|**Estimated Effort**|**Actual Effort**|
 |--------|--------|--------|
-||hrs|hrs|
-||hrs|hrs|
-||hrs|hrs|
+|Implementation of all the classes|20hrs|30hrs|
 |Detailed descriptions of critical use cases|20hrs|25hrs|
-|Totals:|55hrs|67hrs|
+|Totals:|40hrs|55hrs|
+### **Interation 3-4-5**
+**Objective**: The purpose of this iteration is to implement all methods and interfaces according to the established division of labour.
+|**Features / Activities / Deliverables**|**Estimated Effort**|**Actual Effort**|
+|--------|--------|--------|
+|Implementation of all the interfaces|20hrs|15hrs|
+|Implementation of all the methods|15hrs|10hrs|
+|Changes to improve the graphic and the functioning of the program|15hrs|10hrs|
+|Totals:|50hrs|35hrs|
