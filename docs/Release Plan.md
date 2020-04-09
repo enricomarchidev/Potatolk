@@ -32,3 +32,20 @@
 >Interation #6 (09/12 - 12/12): Fix bugs and project ready for distribution  
 
 ### **Interation 1**
+**Objective**: The purpose of this iteration is to initialize the program.
+|**Features / Activities / Deliverables**|**Estimated Effort**|**Actual Effort**|
+|--------|--------|--------|
+|Welcome screen|5hrs|5hrs|
+|Division of duties|5hrs|2hrs|
+|Choices for the graphic user interface|20hrs|25hrs|
+|Start the implementation of the graphic user interface|25hrs|35hrs|
+|Totals:|55hrs|67hrs|
+### **Interation 2**
+**Objective**: The purpose of this iteration is to implement all methods and interfaces according to the established division of labour .
+|**Features / Activities / Deliverables**|**Estimated Effort**|**Actual Effort**|
+|--------|--------|--------|
+||hrs|hrs|
+||hrs|hrs|
+||hrs|hrs|
+|Detailed descriptions of critical use cases|20hrs|25hrs|
+|Totals:|55hrs|67hrs|
