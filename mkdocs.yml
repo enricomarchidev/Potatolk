@@ -1,12 +1,29 @@
 site_name: 2020_5EI_Team3
 nav:
      - 'Project Charter': 'Project Charter.md'
+     - 'Project Charter PDF': 'Project Charter.pdf'
      - 'Software Requirements Specification': 'Software Requirements Specification.md'
      - 'Software Requirements Specification PDF': 'Software Requirements Specification.pdf'
      - 'Software Project Management Plan': 'Software Project Management Plan.md'
      - 'Software Project Management Plan PDF': 'Software Project Management Plan.pdf'
      - 'Business Model Canvas': 'Business Model Canvas.pdf'
-     - 'Project Model Canvas': 'Project Model Canvas.pdf'     
+     - 'Project Model Canvas': 'Project Model Canvas.pdf'
+     - 'Release Plan': 'Release Plan.md'
+     - 'Release Plan PDF': 'Release Plan.pdf'
+     - 'Interation Plan': 'Interation Plan.md'
+     - 'Interation Plan PDF': 'Interation Plan.pdf'
+     - 'Memo of Understanding PDF': 'Memo of Understanding.pdf'
+     - 'Project Success Criteria': 'Project Success Criteria.md'
+     - 'Project Success Criteria PDF': 'Project Success Criteria.pdf'
+     - 'Architecture And Design': 'Architecture And Design.md'
+     - 'Test Plan': 'Test Plan.md'
+     - 'Test Plan PDF': 'Test Plan.pdf'
+     - 'Test Case Specification': 'Test Case Specification.md'
+     - 'Test Case Specification PDF': 'Test Case Specification.pdf'
+     - 'User Guide': 'User Guide.md'
+     - 'User Guide PDF': 'User Guide.pdf'
+     - 'System Documentation': 'System Documentation.md'
+     - 'System Documentation PDF': 'System Documentation.pdf'
     
 theme:
     name: readthedocs
