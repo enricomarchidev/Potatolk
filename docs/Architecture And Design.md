@@ -121,15 +121,12 @@ In the functional programming part there are dynamic elements such as the functi
 The physical components of the entire structure with which the application was made are located in the school
 ITIS Guglielmo Marconi (VR), the application in any case, when it should take development in future versions with improved functions, could be put on a server in order to make it public, but these are assumptions.
 
-https://lh3.googleusercontent.com/proxy/DIJTmoc6k0hxPJ2DMuVdhiIUOWPo6kGv7gAr237P63niWwDYlylKoDUK8-DNV3tGg3Z4_CXNsqYd7JGS2Cls
 
 
 
 # 10 .  Use Case View
     
-   It is possible to view from the image content viewable through the following link
 
-https://lh3.googleusercontent.com/proxy/DIJTmoc6k0hxPJ2DMuVdhiIUOWPo6kGv7gAr237P63niWwDYlylKoDUK8-DNV3tGg3Z4_CXNsqYd7JGS2Cls
 
 We understand the primoridial context in which the application is used, which, as previously said, would seem the scholastic one as more questionable.
 A proposed visualization is one in which the professor, who will be located in the "cattedra" section of the image, will naturally have greater privileges (still to be implemented in the application), compared to the students each of whom will be located in the "alunno x" section of the linked image.
