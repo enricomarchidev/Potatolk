@@ -45,24 +45,42 @@ The app is expected to:
   
 
 ## Schedule Information (Major milestones and deliverables)
-18/10/2019 - Gather requirements and thinking about a protocol  
-25/10/2019 - Produce a sort of RFC for the protocol and a client GUI mockup  
+18/10/2019 - Gather requirements and thinking about a protocol 
+
+25/10/2019 - Produce a sort of RFC for the protocol and a client GUI mockup
+
 31/10/2019 - Started to develop the client using GitHub as VCS  
-08/11/2019 - Developed first version of Potatolk GUI (PCPClient)  
-15/11/2019 - Developed registration method and login GUI (PCPLogin)  
+
+08/11/2019 - Developed first version of Potatolk GUI (PCPClient) 
+
+15/11/2019 - Developed registration method and login GUI (PCPLogin) 
+
 22/11/2019 - Improved registration method and PCPLogin  
+
 26/11/2019 - Merged Model and GUI branches to master (so we added new features to master)
+
 29/11/2019 - Binded registration method with PCPLogin  
+
 29/11/2019 - Developed logout GUI (PCPLogout)
+
 03/12/2019 - Merged GUI branch to master (so we added new graphic improvements to master)
+
 04/12/2019 - Completed ClientStatus class
+
 04/12/2019 - Developed Connection class
+
 04/12/2019 - GUI improvements
+
 05/12/2019 - Developed graphical UserListPanel
+
 06/12/2019 - Developed packetReceiver and packetInterpreter threads
+
 09/12/2019 - Model and GUI improvements
+
 10/12/2019 - Merged Model and GUI branches to master
-11/12/2019 - Last application improvements to master  
+
+11/12/2019 - Last application improvements to master 
+
 13/12/2019 - Product Released
 
 
