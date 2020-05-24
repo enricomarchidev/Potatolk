@@ -1,42 +1,16 @@
-﻿**Potatolk**  **User Guide**
+﻿# **User Guide**
 
-**Team**  **3**
+**Prepared by:** Elia Gaole
 
-January7, 2020
 
-**Team Members**
 
-Marchi Enrico
-
-Grippi Giulio Federico
-
-Gaole Elia
-
-Emiliani Jennifer
-
-Bulai Matteo Alexandru
-
-**Contents**
-
-Contents page 2
-
-Introduction page 3
-
-Quick Start Guide page 3
-
-Use Topic page 7
-
-Errors page 7
-
-#
-
-## 1 Introduction
+## 1. Introduction
 
 The Potatolk application allows users, through the use of a simple and intuitive interface, to exchange messages. This document will provide instructions for using the application, from the login operations, to the exchange of messages, to the logout operation.
 
-#
 
-## 2 Quick Start Guide
+
+## 2. Quick Start Guide
 
 1. Tap the Potatolk&#39;s icon in your device menu. The login screen will be brought up.
 
@@ -65,15 +39,17 @@ At the bottom you can type the message that can be sent through the green button
 6. The logout window will open
 
 7. It will ask if you are sure you want to exit and just click the button with the word yes (otherwise click no to cancel).
-#
-## 3 Use Topic
+
+  
+## 3. Use Topic
 
 As already said the topics are used to create some kind of private chat rooms even if they are not really this one.
 
 Essentially, when you enter a specific topic (e.g. mathematics), you can only talk to people who have entered the same topic (so if Mario has entered the topic &quot;Italian&quot; and Luigi the topic &quot;mathematics&quot;, they will not be able to communicate).
 
-#
-## 4 Errors
+
+
+## 4. Errors
 
 In the chat in question the errors can be various:
 

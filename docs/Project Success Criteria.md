@@ -1,4 +1,8 @@
 # **Success Criteria for Potatolk Project**
+Prepared by: Jennifer Emiliani
+
+
+
 ### The PAL project will be considered a success if...
 
 **A fully functional system is delivered on April 19th.**  
@@ -28,6 +32,8 @@ Enrico Marchi, Project Manager
 
 ._______________________________.  
 Grazia Cobello, Customer Representative
+
+
 
 ### **PAL Acceptance Test User Survey**
 

@@ -1,12 +1,12 @@
-﻿Mobile Realtor
-
-Iteration #1 Plan
+﻿# Interation Plan
 
 **Revision History**
 
 | **Author** | **Date** | **Description** |
 | --- | --- | --- |
-| Enrico Marchi | 7/1/2020 | Initial Release 
+| Elia Gaole | 7/1/2020 | Initial Release |
+
+
 
 ## 1. Objectives
 
@@ -16,12 +16,16 @@ The purpose of this iteration is to create a working skeleton of the system. At 
 - send messages to other users and use all the different thing in the chat
 - Logout from the chat
 
+
+
 ## 2. Use Cases
 
 The following use cases are involved in this iteration:
 
 - UC2: Login into chat window – The basic flow of this use case will be implemented.
 - UC3: Use all the thing in the chat – The basic flow and a few of the alternate flows in this use case will be implemented.
+
+
 
 ## 3. Task Schedule
 

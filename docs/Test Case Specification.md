@@ -1,13 +1,13 @@
-**Potatolk**
-
 # Test case specification
-### For team 3
+**Prepared by:** [Enrico Marchi](https://github.com/enricomarchidev "Enrico Marchi")
 
-### Prepared by: [Enrico Marchi](https://github.com/enricomarchidev "Enrico Marchi")
+
 
 ## 1) Introduction
 
 This document provides the test cases to be carried out for the [Potatolk Client Application](https://github.com/enricomarchidev/Potatolk "Potatolk Client Application") based on [PotatoChatProtocol(PCP) specification](https://2020-5ei-team6-trentin.readthedocs.io/en/latest/PCP-Min/ "PCP Specification"). Each item to be tested is represented by an individual test case. Each case details the input and expected outputs.
+
+
 
 ## 2) Test Cases: Java Application (.jar)
 
