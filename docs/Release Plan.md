@@ -47,6 +47,7 @@ Prepared by: Jennifer Emiliani
 ## **Interation 1**
 
 **Objective**: The purpose of this iteration is to initialize the program.
+
 |**Features / Activities / Deliverables**|**Estimated Effort**|**Actual Effort**|
 |--------|--------|--------|
 |Welcome screen|5hrs|5hrs|
@@ -59,6 +60,7 @@ Prepared by: Jennifer Emiliani
 ## **Interation 2**
 
 **Objective**: The purpose of this iteration is to implement all the classes according to the established division of labour.
+
 |**Features / Activities / Deliverables**|**Estimated Effort**|**Actual Effort**|
 |--------|--------|--------|
 |Implementation of all the classes|20hrs|30hrs|
@@ -69,6 +71,7 @@ Prepared by: Jennifer Emiliani
 ## **Interation 3-4-5**
 
 **Objective**: The purpose of this iteration is to implement all methods and interfaces according to the established division of labour.
+
 |**Features / Activities / Deliverables**|**Estimated Effort**|**Actual Effort**|
 |--------|--------|--------|
 |Implementation of all the interfaces|20hrs|15hrs|
