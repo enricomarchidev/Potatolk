@@ -57,6 +57,7 @@ Prepared by: Jennifer Emiliani
 |Totals:|55hrs|67hrs|
 
 
+
 ## **Interation 2**
 
 **Objective**: The purpose of this iteration is to implement all the classes according to the established division of labour.
@@ -66,6 +67,7 @@ Prepared by: Jennifer Emiliani
 |Implementation of all the classes|20hrs|30hrs|
 |Detailed descriptions of critical use cases|20hrs|25hrs|
 |Totals:|40hrs|55hrs|
+
 
 
 ## **Interation 3-4-5**
@@ -78,6 +80,7 @@ Prepared by: Jennifer Emiliani
 |Implementation of all the methods|15hrs|10hrs|
 |Changes to improve the graphic and the functioning of the program|15hrs|10hrs|
 |Totals:|50hrs|35hrs|
+
 
 
 ## **Features not scheduled but under consideration**

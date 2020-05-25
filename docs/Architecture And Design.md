@@ -34,13 +34,13 @@ The application is particularly usable because it has a simple and commonly used
 
 ## 2. Logical View 
 The relationships between the classes described above are as follows:
-Messages creates messages and communicates with Control Messages
-Control Messages, manages messages with 2 basic methods
-Client Status contains methods for doing user actions
-Thread (which activates when you have successfully logged in)
-PacketInterpreter: determines all the message opcodes
-Connection: with it you connect and KEEP the connection
-Group: maintains the group information of the chat
+**Messages** creates messages and communicates with Control Messages
+**Control Messages**, manages messages with 2 basic methods
+**Client Status** contains methods for doing user actions
+**Thread** (which activates when you have successfully logged in)
+**PacketInterpreter**: determines all the message opcodes
+**Connection:** with it you connect and KEEP the connection
+**Group:** maintains the group information of the chat
 
 
 
@@ -57,8 +57,7 @@ The system developed theoretically adapts well enough to what has turned out on 
 the classes interact well enough, which allows the whole application to function properly.
     
 ## 5. Use Case View 
-The main use cases,
-as previously said, they could be those inserted in a school context, perhaps for the management of messages that must be sent between teams organized within the classroom of a school.
+The main use cases, as previously said, they could be those inserted in a school context, perhaps for the management of messages that must be sent between teams organized within the classroom of a school.
 It could also be used as a chatting protocol between professors (always at school level).
 It could be used in more business and professional contexts, but for this we prefer to wait for the development of better and more updated versions.
 With the development of the most updated versions, this application could be put on the net, making it almost a social network, and therefore a public service.
@@ -96,8 +95,7 @@ In the functional programming part there are dynamic elements such as the functi
 
 ## 9. Physical View
 
-The physical components of the entire structure with which the application was made are located in the school
-ITIS Guglielmo Marconi (VR), the application in any case, when it should take development in future versions with improved functions, could be put on a server in order to make it public, but these are assumptions.
+The physical components of the entire structure with which the application was made are located in the school ITIS Guglielmo Marconi (VR), the application in any case, when it should take development in future versions with improved functions, could be put on a server in order to make it public, but these are assumptions.
 
 
 
