@@ -23,13 +23,21 @@ The application has an intuitive interface and a dark theme to facilitate its us
 ## Revision History
 
 Version : 1.0
+
 Date :  12 November 2019
+
 Name : Marchi Enrico, Gaole Elia, Bulai Matteo, Emiliani Jennyfer, Grippi Giulio
+
 Description: First draft version, containing the essentials for the operations, without a graphic aspect
 
+
+
 Version : 2.0
+
 Date :  8 December 2019
+
 Name : Marchi Enrico, Gaole Elia, Bulai Matteo, Emiliani Jennyfer, Grippi Giulio
+
 Description: Introduced the graphic aspect. Introduced a dark theme for ease of use
 
 
